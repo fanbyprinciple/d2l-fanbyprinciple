@@ -8,7 +8,7 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 
 -----
 
-# Introduction 
+# Ch1 Introduction 
 
 ### Types of machine learning
 
@@ -16,15 +16,15 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 
 2. Classification
 
-3. Tagging
+3. Tagging - tagging in medical journels
 
 4. Recommendation systems
 
-5. Search
+5. Search - order matters
 
 6. Sequence learning
 
-7. Unsupervised learning
+7. Unsupervised learning - distributing shift - test and train data sufficiently differ.
 
 ### Innovations along the way
 
@@ -55,4 +55,10 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 Where else can you apply the end-to-end training approach, such as in Fig. 1.1.2, physics, engineering, and econometrics?
 
 - philosphical experiments
+
+----
+
+# Ch2 Preliminaries
+
+
 
