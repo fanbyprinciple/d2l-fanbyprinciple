@@ -60,5 +60,50 @@ Where else can you apply the end-to-end training approach, such as in Fig. 1.1.2
 
 # Ch2 Preliminaries
 
+## 2.1 Mathematical operation
+
+- In mathematical notation, we would denote such a unary scalar operator (taking one input) by the
+signature f : R → R. This just means that the function is mapping from any real number (R) onto
+another. Likewise, we denote a binary scalar operator (taking two real inputs, and yielding one
+output) by the signature f : R, R → R.
+
+- Element wise operation :
+Given any two vectors u and v of the same shape, and a binary
+operator f, we can produce a vector c = F(u, v) by setting ci ← f(ui, vi) for all i, where ci, ui, and vi are the ith elements of vectors c,u, and v. Here, we produced the vector-valued F : Rd,d → Rd
+by lifting the scalar function to an elementwise vector operation.
+
+### Braodcasting mechanism
+
+-  Used by pytorch when dealing with unequal tensor
+
+### saving memory
+
+- Every time we allocate a tensor the memory location is initialised
+- So we have the cnoceptof inplace vector
+
+### Ocnverting to other python objects
+
+- converting to a numpy tensor
+
+- converting to a scalar using torch,item.
+
+### Exercises
+1. Run the code in this section. Change the conditional statement X == Y in this section to X <
+Y or X > Y, and then see what kind of tensor you can get.
+
+- done
+
+2. Replace the two tensors that operate by element in the broadcasting mechanism with other
+shapes, e.g., 3-dimensional tensors. Is the result the same as expected?
+
+![](broadcasting.png)
+
+page 67
+
+
+
+
+
+
 
 
