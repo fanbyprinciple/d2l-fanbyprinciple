@@ -216,6 +216,22 @@ axis 0, 1, and 2?
 9. Feed a tensor with 3 or more axes to the linalg.norm function and observe its output. What
 does this function compute for tensors of arbitrary shape?
 
+## Differential Calculus
+
+- Made with the intention of finding approximations.
+
+- In machine learning the goal is optimization and generalisation
+
+- In ML, we choose functions that are differentiable with respect to model parameters.
+
+- Put simply, this means that for each parameter,
+we can determine how rapidly the loss would increase or decrease, were we to increase or decrease
+that parameter by an infinitesimally small amount.
+
+![](differential.png)
+
+- 
+
 
 
 
