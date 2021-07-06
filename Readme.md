@@ -230,7 +230,41 @@ that parameter by an infinitesimally small amount.
 
 ![](differential.png)
 
-- 
+- Rules of differentiation 
+
+![](rules_differentiation.png)
+
+- plots in d2l
+
+![](plots_in_d2l.png)
+
+- partial derivatives - in multivariate function taking derivative keeping all other variable constant
+
+- gradients - when we concatenate the partial derivatives of a mutivariate function with respect to its derivative we get gradient
+
+![](gradients.png)
+
+- chain rule given y as a function of x, where y is differentiable by u and u is differentiable by x , then `dy/dx = dy/du * du/dx`
+
+### Exercises
+1. Plot the function y = f(x) = x
+and its tangent line when x = 1.
+
+![](wrong_answer_1.png)
+
+rest in notebook:
+
+2. Find the gradient of the function f(x) = 3x
+3. What is the gradient of the function f(x) = ∥x∥2?
+4. Can you write out the chain rule for the case where u = f(x, y, z) and x = x(a, b), y = y(a, b),
+and z = z(a, b)?
+
+## automatic differentiation
+
+page 88
+
+
+
 
 
 
