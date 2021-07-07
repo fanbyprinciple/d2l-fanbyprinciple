@@ -261,18 +261,154 @@ and z = z(a, b)?
 
 ## automatic differentiation
 
-page 88
+- Before we even calculate the gradient of y with respect to x, we will need a place to store it. It is
+    important that we do not allocate new memory every time we take a derivative with respect to a
+    parameter because we will often update the same parameters thousands or millions of times and
+    could quickly run out of memory.
+
+- given x , the values of y= f(x) the grad with respect to x is stored in x.grad, you need to call x.requires_grad_(True)
+
+- Backward for non scalar vector - we need to call backward by converting to scalar , for example y is a vector then y.sum().backward()
+
+- detaching computation - Sometimes, we wish to move some calculations outside of the recorded computational graph. For
+    example, say that y was calculated as a function of x, and that subsequently z was calculated as a
+    function of both y and x. Now, imagine that we wanted to calculate the gradient of z with respect
+    to x, but wanted for some reason to treat y as a constant, and only take into account the role that
+    x played after y was calculated.
+
+- Here, we can detach y to return a new variable u that has the same value as y but discards any
+    information about how y was computed in the computational graph. In other words, the gradient
+    will not flow backwards through u to x. Thus, the following backpropagation function computes
+    the partial derivative of z = u * x with respect to x while treating u as a constant, instead of the
+    partial derivative of z = x * x * x with respect to x.
+
+### Exercises
+
+given in notebook
+
+1. Why is the second derivative much more expensive to compute than the first derivative?
+2. After running the function for backpropagation, immediately run it again and see what happens.
+3. In the control flow example where we calculate the derivative of d with respect to a, what
+would happen if we changed the variable a to a random vector or matrix. At this point, the
+result of the calculation f(a) is no longer a scalar. What happens to the result? How do we
+analyze this?
+4. Redesign an example of finding the gradient of the control flow. Run and analyze the result.
+5. Let f(x) = sin(x). Plot f(x) and df(x)
+dx , where the latter is computed without exploiting that
+(x) = cos(x).
+
+![](gradient_of_sin.png)
+
+On magnifying
+
+![](gradient_sin_magnified.png)
+
+## Probability
+
+- basic probability theory - 
+- sampling - drawing examples usually from a multinomial distributions
+
+![](sampling_proba.png)
+
+- axioms of probability
+
+    • For any event A, its probability is never negative, i.e., P(A) ≥ 0;
+    • Probability of the entire sample space is 1, i.e., P(S) = 1;
+    • For any countable sequence of events A1, A2, . . . that are mutually exclusive (Ai∩Aj = ∅ for all
+    i ̸= j), the probability that any happens is equal to the sum of their individual probabilities,
+    i.e., P(
+    ∪∞
+    i=1 Ai) = ∑∞
+    i=1 P(Ai).
 
 
+- random variables - in which proabbility is measured in terms of discrete variables
+- dealing with multiple random variables 
 
+    - joint random variables - The first is called the joint probability P(A = a, B = b). Given any values a and b, the joint probability lets us answer, what is the probability that A = a and B = b simultaneously? Note that for
+    any values a and b, P(A = a, B = b) ≤ P(A = a). This has to be the case, since for A = a and
+    B = b to happen, A = a has to happen and B = b also has to happen (and vice versa). Thus, A = a
+    and B = b cannot be more likely than A = a or B = b individually
 
+- conditional probability - This brings us to an interesting ratio: 0 ≤
+    P(A=a,B=b)
+    P(A=a) ≤ 1. We call this ratio a conditional probability
+    and denote it by P(B = b | A = a): it is the probability of B = b, provided that A = a has occurred.
 
+- Bayes theoram - Using the definition of conditional probabilities, we can derive one of the most useful and celebrated equations in statistics: Bayes’ theorem. It goes as follows. By construction, we have the
+    multiplication rule that P(A, B) = P(B | A)P(A). By symmetry, this also holds for P(A, B) =
+    P(A | B)P(B). Assume that P(B) > 0. Solving for one of the conditional variables we get
+    P(A | B) = P(B | A)P(A)
+    P(B)
 
+    Note that here we use the more compact notation where P(A, B)is a joint distribution and P(A | B)
+    is a conditional distribution. Such distributions can be evaluated for particular values A = a, B = b.
 
+- Marginalization
+    Bayesʼ theorem is very useful if we want to infer one thing from the other, say cause and effect,
+    but we only know the properties in the reverse direction, as we will see later in this section. One
+    important operation that we need, to make this work, is marginalization. It is the operation of
+    determining P(B) from P(A, B). We can see that the probability of B amounts to accounting for
+    all possible choices of A and aggregating the joint probabilities over all of them:
+    P(B) = ∑A.P(A, B)
+    which is also known as the sum rule. The probability or distribution as a result of marginalization
+    is called a marginal probability or a marginal distribution 
 
+- Independence - 
+    Another useful property to check for is dependence vs. independence. Two random variables A and
+    B being independent means that the occurrence of one event of A does not reveal any information
+    about the occurrence of an event of B. In this case P(B | A) = P(B). Statisticians typically
+    express this as A ⊥ B. From Bayesʼ theorem, it follows immediately that also P(A | B) = P(A).
+    In all the other cases we call A and B dependent. For instance, two successive rolls of a die are
+    independent. In contrast, the position of a light switch and the brightness in the room are not
+    (they are not perfectly deterministic, though, since we could always have a broken light bulb,
+    power failure, or a broken switch).
+    Since P(A | B) = P(A,B)
+    P(B) = P(A) is equivalent to P(A, B) = P(A)P(B), two random variables are
+    independent if and only if their joint distribution is the product of their individual distributions.
+    Likewise, two random variables A and B are conditionally independent given another random variable C if and only if P(A, B | C) = P(A | C)P(B | C). This is expressed as A ⊥ B | C.
 
+- Expectation and variance - 
 
+![](expectation_variance.png)
 
+### Exercises
+1. We conducted m = 500 groups of experiments where each group draws n = 10 samples.
+Vary m and n. Observe and analyze the experimental results.
+
+![](estimating_die.png)
+
+2. Given two events with probability P(A) and P(B), compute upper and lower bounds on
+P(A ∪ B) and P(A ∩ B). (Hint: display the situation using a Venn Diagram43.)
+
+dont know
+
+3. Assume that we have a sequence of random variables, say A, B, and C, where B only depends on A, and C only depends on B, can you simplify the joint probability P(A, B, C)?
+
+dont know
+
+P(A,B|C) formula of naive bayes needs to be applied
+
+(Hint: this is a Markov Chain44.)
+4. In Section 2.6.2, the first test is more accurate. Why not run the first test twice rather than
+run both the first and second tests?
+
+dont know
+
+both experiment may not be independent i missed the point of experiment
+
+## Documentation
+
+1. finding all functions and distributions
+    `print(torch.distributions)`
+2. usage of specific functions
+    `help(torch.ones)`
+
+### Exercises
+1. Look up the documentation for any function or class in the deep learning framework. Can
+you also find the documentation on the official website of the framework.
+
+i have looked up the documenation of fasti before.
 
 
 
