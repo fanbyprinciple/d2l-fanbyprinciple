@@ -408,7 +408,7 @@ both experiment may not be independent i missed the point of experiment
 1. Look up the documentation for any function or class in the deep learning framework. Can
 you also find the documentation on the official website of the framework.
 
-i have looked up the documenation of fasti before.
+i have looked up the documenation of fastai before.
 
 
 
