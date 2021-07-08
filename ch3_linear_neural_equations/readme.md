@@ -78,3 +78,16 @@ of regression is most often to characterize the relationship between the inputs 
 - 1/ root(2 * sigma ^2 * pi) * exp(-1/(2 * sigma ^ 2) * (x - mu)^2)
 
 ![](normal_distribution.png)
+
+- One way to motivate linear regression with the mean squared error loss function (or simply
+squared loss) is to formally assume that observations arise from noisy observations, where the
+noise is normally distributed as follows:
+y = w.T *x + b + epsilon which is the normal noise
+
+-predicting liklihood that we can see y when given a y is  -
+
+- 1/root(2 * sigma^2 * pi) * exp(-0.5/ sigma^2 * (y- w.T * X - b)^ 2)
+
+![](likelihood_of_x.png)
+
+- 
