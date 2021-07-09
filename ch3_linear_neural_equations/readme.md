@@ -2,6 +2,12 @@
 
 - Learning simple neural network thorugh linear regression.
 
+## stuff to refer
+
+- log liklihood loss
+- basic loss estimation and parameter updation
+-  
+
 ## Linear regression
 
 - Regression refers to a set of methods for modeling the relationship between one or more independent variables and a dependent variable. In the natural sciences and social sciences, the purpose
@@ -79,6 +85,8 @@ of regression is most often to characterize the relationship between the inputs 
 
 ![](normal_distribution.png)
 
+### log likelihood loss
+
 - One way to motivate linear regression with the mean squared error loss function (or simply
 squared loss) is to formally assume that observations arise from noisy observations, where the
 noise is normally distributed as follows:
@@ -90,4 +98,48 @@ y = w.T *x + b + epsilon which is the normal noise
 
 ![](likelihood_of_x.png)
 
-- 
+- sigma value doesnt effect log liklihood loss
+
+## Linear regression to deep neural networks
+
+- gives the biological model of neural network
+
+### Exercises
+
+1. Assume that we have some data
+∑x1, . . . , xn ∈ R. Our goal is to find a constant b such that
+
+(xi − b)2
+is minimized.
+
+    1. Find a analytic solution for the optimal value of b.
+
+    xi = b
+
+    2. How does this problem and its solution relate to the normal distribution?
+
+
+2. Derive the analytic solution to the optimization problem for linear regression with squared
+error. To keep things simple, you can omit the bias b from the problem (we can do this in
+principled fashion by adding one column to X consisting of all ones).
+
+1. Write out the optimization problem in matrix and vector notation (treat all the data as
+a single matrix, and all the target values as a single vector).
+2. Compute the gradient of the loss with respect to w.
+3. Find the analytic solution by setting the gradient equal to zero and solving the matrix
+equation.
+4. When might this be better than using stochastic gradient descent? When might this
+method break?
+3. Assume that the noise model governing the additive noise ϵ is the exponential distribution.
+That is, p(ϵ) = 1
+2
+exp(−|ϵ|).
+1. Write out the negative log-likelihood of the data under the model − log P(y | X).
+2. Can you find a closed form solution?
+3. Suggest a stochastic gradient descent algorithm to solve this problem. What could possibly go wrong (hint: what happens near the stationary point as we keep on updating
+the parameters)? Can you fix this?
+
+## Creating linear neural networks from scratch
+
+![](self_made_dataset.png)
+
