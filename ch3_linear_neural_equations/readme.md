@@ -141,5 +141,12 @@ the parameters)? Can you fix this?
 
 ## Creating linear neural networks from scratch
 
+- creating dataset
+
 ![](self_made_dataset.png)
+
+- reading the dataset
+
+
+
 
