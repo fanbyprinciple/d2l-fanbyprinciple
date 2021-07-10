@@ -147,6 +147,61 @@ the parameters)? Can you fix this?
 
 - reading the dataset
 
+### Exercises
+
+## Exercises
+
+1. What would happen if we were to initialize the weights to zero. Would the algorithm still work?
+
+It didnt work as grad of zero was not handled.
+
+1. Assume that you are
+   [Georg Simon Ohm](https://en.wikipedia.org/wiki/Georg_Ohm) trying to come up
+   with a model between voltage and current. Can you use auto differentiation to learn the parameters of your model?
+
+![](ohm_error.png)
+
+1. Can you use [Planck's Law](https://en.wikipedia.org/wiki/Planck%27s_law) to determine the temperature of an object using spectral energy density?
+
+The formula:
+
+![](spectral_density.png)
+
+The spectral density comes to be linear because we are not able to update the parameters
+
+![](spectral_density_linear.png)
+
+1. What are the problems you might encounter if you wanted to  compute the second derivatives? How would you fix them?
+
+vanishing gradients 
+
+1.  Why is the `reshape` function needed in the `squared_loss` function?
+
+so that the predicted y is same shape as that of labels
+
+1. Experiment using different learning rates to find out how fast the loss function value drops.
+
+okay letschange lr
+
+1. If the number of examples cannot be divided by the batch size, what happens to the `data_iter` function's behavior?
+
+then it just caters for reminder of batches
+
+# Concise implementation of Linear regression
+
+### Exercises
+1. If we replace nn.MSELoss(reduction='sum') with nn.MSELoss(), how can we change the
+learning rate for the code to behave identically. Why?
+2. Review the PyTorch documentation to see what loss functions and initialization methods are
+provided. Replace the loss by Huberʼs loss.
+3. How do you access the gradient of net[0].weight?
+
+in notebook:
+
+![](concise_linear.png)
+
+
+
 
 
 
