@@ -200,8 +200,80 @@ in notebook:
 
 ![](concise_linear.png)
 
+## 3.4 Softmax Regression
+
+- Regression is the hammer we reach for when we want to answer how much? or how many? questions. If you want to predict the number of dollars (price) at which a house will be sold, or the
+number of wins a baseball team might have, or the number of days that a patient will remain
+hospitalized before being discharged, then you are probably looking for a regression model.
+In practice, we are more often interested in classification: asking not “how much” but “which one”.
+
+- one hot encoding of labels
+
+- we cannot use output directly because 
+    1. probability should sum upto 1
+    2. probability should be non negative
+
+- how we achive this is first we take exponential of each logits and then devide by the exponentials
+
+- Vectorisation of mini batches - by creating mini batches we do matrix matrix multiplication instead of matrix vector multiplication we would usually do to sped up operations
+
+- Loss function - 
+log liklihood - 
+![](cross_entropy_loss.png)
+
+- Softmaxand derivatives - when you take derivative of softmax you find that it is a linear equations as it gives you `y_hat - y` as derivative.
+
+- cross entropy loss -  where labels instead of being 0,1,1 become distributed over a range as (0.1,0.1,0.8) most used for classification problems
+
+### information theory basics 
+
+- deals with transmitting information, decoding and manipulating and encoding
+
+- entropy - quantity is called entropy - H[P ] = sigma(-P(j)) log(P(j))
+the unit used is nat, 1/log(2) ~ 1.44 bit
+
+- surprisal - easy to predict meas that it is easy to compress, r if we cannot perfectly predict every event, then we might sometimes be surprised. Our surprise is greater when we assigned an event lower probability. Claude Shannon settled on
+log 1 P(j) = − log P(j) to quantify oneʼs surprisal at observing an event j having assigned it a (subjective) probability P(j)
+
+- cross entropy revisited - So if entropy is level of surprise experienced by someone who knows the true probability, then you
+might be wondering, what is cross-entropy? The cross-entropy from P to Q, denoted H(P, Q), is
+the expected surprisal of an observer with subjective probabilities Q upon seeing data that were
+actually generated according to probabilities P. The lowest possible cross-entropy is achieved
+when P = Q. In this case, the cross-entropy from P to Q is H(P, P) = H(P).
+
+- cross entropy can be seen as: (i) as maximizing
+the likelihood of the observed data; and (ii) as minimizing our surprisal (and thus the number of
+bits) required to communicate the labels.
+
+### Exercises
+
+1. We can explore the connection between exponential families and the softmax in some more
+depth.
+    1. Compute the second derivative of the cross-entropy loss l(y, yˆ) for the softmax.
+    2. Compute the variance of the distribution given by softmax(o) and show that it matches
+the second derivative computed above.
+
+2. Assume that we have three classes which occur with equal probability, i.e., the probability
+vector is 1/3
+    1. What is the problem if we try to design a binary code for it?
+    2. Can you design a better code? Hint: what happens if we try to encode two independent
+observations? What if we encode n observations jointly?
+
+3. Softmax is a misnomer for the mapping introduced above (but everyone in deep learning
+uses it). The real softmax is defined as RealSoftMax(a, b) = log(exp(a) + exp(b)).
+    1. Prove that RealSoftMax(a, b) > max(a, b).
+    2. Prove that this holds for λ
+    −1RealSoftMax(λa, λb), provided that λ > 0.
+    3. Show that for λ → ∞ we have λ
+    −1RealSoftMax(λa, λb) → max(a, b).
+    4. What does the soft-min look like?
+    5. Extend this to more than two numbers
+
+need to come back toit after i do image recognition
 
 
+
+ 
 
 
 
