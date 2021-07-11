@@ -271,6 +271,33 @@ uses it). The real softmax is defined as RealSoftMax(a, b) = log(exp(a) + exp(b)
 
 need to come back toit after i do image recognition
 
+## image recognitiona
+
+- loading data
+
+![](loading_data.png)
+
+### exercises
+
+1. Does reducing the batch_size (for instance, to 1) affect the reading performance?
+
+increases
+
+2. The data iterator performance is important. Do you think the current implementation is fast
+enough? Explore various options to improve it.
+
+https://stackoverflow.com/questions/61393613/pytorch-speed-up-data-loading
+
+3. Check out the frameworkʼs online API documentation. Which other datasets are available?
+
+## Implementing softmax from scratch
+
+- Recall that in softmax regression, we have as many outputs as there are classes. Because our
+dataset has 10 classes, our network will have an output dimension of 10. Consequently, our weights
+will constitute a 784 × 10 matrix and the biases will constitute a 1 × 10 row vector. As with linear
+regression, we will initialize our weights W with Gaussian noise and our biases to take the initial
+value 0.
+
 
 
  
