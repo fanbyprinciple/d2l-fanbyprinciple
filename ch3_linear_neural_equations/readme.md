@@ -298,8 +298,32 @@ will constitute a 784 × 10 matrix and the biases will constitute a 1 × 10 row 
 regression, we will initialize our weights W with Gaussian noise and our biases to take the initial
 value 0.
 
+- discussion on sum function - sum over an axis, if we sum over column then the resultant shape would be of the shape columns.
 
+- in softmax we need to first take the exponenetial and then find the sum of each rows and then devide.
 
+- Cross entropy loss function -takes negative log liklihood of the probablity assigned to true value. 
+Recall that cross-entropy takes the negative log-likelihood of the predicted probability assigned to
+the true label. Rather than iterating over the predictions with a Python for-loop (which tends to
+be inefficient), we can pick all elements by a single operator. Below, we create sample data y_hat
+with 2 examples of predicted probabilities over 3 classes and their corresponding labels y. With y
+we know that in the first example the first class is the correct prediction and in the second example
+the third class is the ground-truth. Using y as the indices of the probabilities in y_hat, we pick the
+probability of the first class in the first example and the probability of the third class in the second
+example.
+
+- classification accuracy - Given the predicted probability distribution y_hat, we typically choose the class with the highest
+predicted probability whenever we must output a hard prediction.
+
+First, if y_hat is a matrix, we assume that the second
+dimension stores prediction scores for each class. We use argmax to obtain the predicted class by
+the index for the largest entry in each row. Then we compare the predicted class with the groundtruth y elementwise. Since the equality operator == is sensitive to data types, we convert y_hatʼs
+data type to match that of y. The result is a tensor containing entries of 0 (false) and 1 (true).
+Taking the sum yields the number of correct predictions
+
+- Reevaluate the chapter statring frmthe top.
+
+![](metrics_softmax_accuracy.png)
  
 
 
