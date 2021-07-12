@@ -150,15 +150,15 @@ That is, p(ϵ) = 1/2 * exp(−|ϵ|).
 
     * 1/2 * exp(-|1/root(2 * pi * sigma ^ 2) * exp(-1/(2 * sigma **2) * (x- mu) **2)|) ? what is exponential distribution formula?
 
+    * if exponential distribution is taken as lambda  * e ^ (lambda * x)
+
     2. Can you find a closed form solution?
 
-    hmm not quite.
+    * the answer would be x =0, solving after taking derivative. hmm not quite.
 
     3. Suggest a stochastic gradient descent algorithm to solve this problem. What could possibly go wrong (hint: what happens near the stationary point as we keep on updating the parameters)? Can you fix this?
 
-    Not really know whats going on here.
-
-
+    * maybe the gradients become zero Not really know whats going on here.
 
 ## Creating linear neural networks from scratch
 
@@ -168,9 +168,11 @@ That is, p(ϵ) = 1/2 * exp(−|ϵ|).
 
 - reading the dataset
 
-### Exercises
+Creating a neural network with three parameters:
 
-## Exercises
+![](practice_nn_from_scratch.png)
+
+### Exercises
 
 1. What would happen if we were to initialize the weights to zero. Would the algorithm still work?
 
