@@ -107,37 +107,58 @@ y = w.T *x + b + epsilon which is the normal noise
 ### Exercises
 
 1. Assume that we have some data
-∑x1, . . . , xn ∈ R. Our goal is to find a constant b such that
-
-(xi − b)2
-is minimized.
+∑x1, . . . , xn ∈ R. Our goal is to find a constant b such that (xi − b)2 is minimized.
 
     1. Find a analytic solution for the optimal value of b.
 
-    xi = b
+    * solving for xi = b
 
     2. How does this problem and its solution relate to the normal distribution?
 
+    * if xi=b then normal equation becomes 1/rootof(2 * pi * sigma^2) * exp(0)  == 1/rootof(2 * pi * sigma^2) 
 
 2. Derive the analytic solution to the optimization problem for linear regression with squared
 error. To keep things simple, you can omit the bias b from the problem (we can do this in
 principled fashion by adding one column to X consisting of all ones).
 
-1. Write out the optimization problem in matrix and vector notation (treat all the data as
-a single matrix, and all the target values as a single vector).
-2. Compute the gradient of the loss with respect to w.
-3. Find the analytic solution by setting the gradient equal to zero and solving the matrix
-equation.
-4. When might this be better than using stochastic gradient descent? When might this
-method break?
+    1. Write out the optimization problem in matrix and vector notation (treat all the data as
+    a single matrix, and all the target values as a single vector).
+
+    * X = [[2,3],[4,5]] , y = [0,1] 
+
+    2. Compute the gradient of the loss with respect to w.
+
+    * Not really what was asked but -
+    ![](finding_gradient.png)
+
+    3. Find the analytic solution by setting the gradient equal to zero and solving the matrix
+    equation.
+
+    * The questions subpoint tell you how to do it step wise. we have to minimize || y- Xw ||^2  so differentiating w.r.t w and putting it to zero, we have 2X(y-Xw) = 0, which means = Xy = X.Xw w = (X.X)^-1* Xy.
+
+    ![](analytic_solution.png)
+
+    4. When might this be better than using stochastic gradient descent? When might this
+    method break?
+
+    * This method would be good for small datasets, but on larger datasets the cost of storing the entire data in memory and multiplication may be prohibhitive.
+
 3. Assume that the noise model governing the additive noise ϵ is the exponential distribution.
-That is, p(ϵ) = 1
-2
-exp(−|ϵ|).
-1. Write out the negative log-likelihood of the data under the model − log P(y | X).
-2. Can you find a closed form solution?
-3. Suggest a stochastic gradient descent algorithm to solve this problem. What could possibly go wrong (hint: what happens near the stationary point as we keep on updating
-the parameters)? Can you fix this?
+That is, p(ϵ) = 1/2 * exp(−|ϵ|).
+    
+    1. Write out the negative log-likelihood of the data under the model − log P(y | X).  
+
+    * 1/2 * exp(-|1/root(2 * pi * sigma ^ 2) * exp(-1/(2 * sigma **2) * (x- mu) **2)|) ? what is exponential distribution formula?
+
+    2. Can you find a closed form solution?
+
+    hmm not quite.
+
+    3. Suggest a stochastic gradient descent algorithm to solve this problem. What could possibly go wrong (hint: what happens near the stationary point as we keep on updating the parameters)? Can you fix this?
+
+    Not really know whats going on here.
+
+
 
 ## Creating linear neural networks from scratch
 
