@@ -103,7 +103,7 @@ y = w.T *x + b + epsilon which is the normal noise
 ## Linear regression to deep neural networks
 
 - gives the biological model of neural network
-
+ 
 ### Exercises
 
 1. Assume that we have some data
@@ -273,24 +273,52 @@ bits) required to communicate the labels.
 1. We can explore the connection between exponential families and the softmax in some more
 depth.
     1. Compute the second derivative of the cross-entropy loss l(y, yˆ) for the softmax.
+
+    * after applying quotient rule for cross entropy loss the anaswer comes out to be zero.apparentlythis is wrong.
+
     2. Compute the variance of the distribution given by softmax(o) and show that it matches
 the second derivative computed above.
+
+    * Its close to zero through experiments too. but why should this happen? is second derivative essentially same as variance?
+
+    ![](variance_of_softmax.png)
 
 2. Assume that we have three classes which occur with equal probability, i.e., the probability
 vector is 1/3
     1. What is the problem if we try to design a binary code for it?
+
+    * We would need at least 2 bits, and 00,01, 10 would be used but not 11. ?
+
     2. Can you design a better code? Hint: what happens if we try to encode two independent
 observations? What if we encode n observations jointly?
+
+    * we can do it through one hot encoding where the size of array would be the number of observations n
 
 3. Softmax is a misnomer for the mapping introduced above (but everyone in deep learning
 uses it). The real softmax is defined as RealSoftMax(a, b) = log(exp(a) + exp(b)).
     1. Prove that RealSoftMax(a, b) > max(a, b).
+    * verified though not proved
+    
+    ![](real_softmax.png)
+
     2. Prove that this holds for λ
     −1RealSoftMax(λa, λb), provided that λ > 0.
+    * verified not proved
+    
+    ![](lambda_softmax.png)
+
     3. Show that for λ → ∞ we have λ
     −1RealSoftMax(λa, λb) → max(a, b).
+
+    ![](infinity_realsoftmax.png)
+
     4. What does the soft-min look like?
+
+    ![realsoftmin.png]
+
     5. Extend this to more than two numbers
+    
+    ![](realsoftmax_more.png)
 
 need to come back toit after i do image recognition
 
