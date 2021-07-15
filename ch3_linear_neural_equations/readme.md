@@ -322,7 +322,7 @@ uses it). The real softmax is defined as RealSoftMax(a, b) = log(exp(a) + exp(b)
 
 need to come back toit after i do image recognition
 
-## image recognitiona
+## image recognition
 
 - loading data
 
@@ -375,6 +375,13 @@ Taking the sum yields the number of correct predictions
 - Reevaluate the chapter statring frmthe top.
 
 ![](metrics_softmax_accuracy.png)
+
+- Training - first we createa function to train one epoch
+
+need to debug not training for me
+
+![](debug_softmax_training.png)
+
  
 
 
