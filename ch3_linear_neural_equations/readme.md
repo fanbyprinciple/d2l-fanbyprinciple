@@ -382,6 +382,14 @@ need to debug not training for me
 
 ![](debug_softmax_training.png)
 
+
+### starting once more
+
+Getting subplots correct 
+
+![](subplots.png)
+
+
  
 
 
