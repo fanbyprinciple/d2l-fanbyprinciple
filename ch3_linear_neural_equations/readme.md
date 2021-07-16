@@ -389,6 +389,12 @@ Getting subplots correct
 
 ![](subplots.png)
 
+Got some clarity over whats happening.
+
+Training done
+
+![](training_softmax_graph.png)
+
 
  
 
