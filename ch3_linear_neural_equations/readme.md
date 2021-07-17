@@ -395,6 +395,72 @@ Training done
 
 ![](training_softmax_graph.png)
 
+Predictions
+
+![](fashion_prediction.png)
+
+### Exercises
+
+1. In this section, we directly implemented the softmax function based on the mathematical
+definition of the softmax operation. What problems might this cause? Hint: try to calculate
+the size of exp(50).
+
+* the number is too big
+
+2. The function cross_entropy in this section was implemented according to the definition of
+the cross-entropy loss function. What could be the problem with this implementation? Hint:
+consider the domain of the logarithm.
+
+* domain of logarithm is all non negative numbers.
+
+3. What solutions you can think of to fix the two problems above?
+
+* normalise the data first
+
+4. Is it always a good idea to return the most likely label? For example, would you do this for
+medical diagnosis?
+
+* no in medical dignosis we need high confidence in our predictions, so we need most likely label above a confidence threshold (probability)
+
+5. Assume that we want to use softmax regression to predict the next word based on some
+features. What are some problems that might arise from a large vocabulary?
+
+* if the vocabulary is large then the one hotencoding of the array would be big, and sparse too, we cannot directly apply softmax over all possible y values which will be equal to length of the vocabulary.
+
+## Concise implementation of softmax
+
+- problem with softmax - Recall that the softmax function calculates yˆj = ∑
+exp(oj )
+k
+exp(ok)
+, where yˆj is the j
+th element of the
+predicted probability distribution yˆ and oj is the j
+th element of the logits o. If some of the ok
+are very large (i.e., very positive), then exp(ok) might be larger than the largest number we can
+have for certain data types (i.e., overflow). This would make the denominator (and/or numerator)
+inf (infinity) and we wind up encountering either 0, inf, or nan (not a number) for yˆj . In these
+situations we do not get a well-defined return value for cross-entropy.
+
+- One trick to get around this is to first subtract max(ok) from all ok before proceeding with the
+softmax calculation
+
+- this would give us large negative values for some , but we are saved by the fact that we are using cross entropy which takes the - log.
+
+![](concise_softmax.png)
+
+### Exercises
+
+1. Try adjusting the hyperparameters, such as the batch size, number of epochs, and learning
+rate, to see what the results are.
+
+* changing batch_Size increases time, more epochs trainingaccuracy is more or less constant, learning rate we have to try, changing to 1 loss increases, 0.01 converges slowly.
+
+2. Increase the number of epochs for training. Why might the test accuracy decrease after a
+while? How could we fix this?
+
+* maybe overfitting
+
 
  
 
