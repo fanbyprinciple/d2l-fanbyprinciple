@@ -19,6 +19,18 @@ with activations we have,
 
 # universal approximators
 
+- a single hidden layer can approximateany function,however in practice we use many hidden layers.
+- activation function -
+Activation function decides whether a neuron should be activated or not by calculating the weighted sum and adding a bias to it. Differntiable operators that adds nonlinearity.
 
+### Relu activation 
+
+Rectified linear unit, given X, relu(X) = max(0,X)
+
+![](relu.png)
+
+There is also one parameterised relu, `prelu(x) = max(0,x) + alpha * min(0,x) `
+
+Relu has simple derivative function which lets some of th eparameter through or just vanish which is very useful for dealing with problem of vanishing gradients.
 
 
