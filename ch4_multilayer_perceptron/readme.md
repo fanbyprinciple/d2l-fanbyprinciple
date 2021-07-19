@@ -48,7 +48,7 @@ Relu has simple derivative function which lets some of th eparameter through or 
 
 ![](tanh.png)
 
-### Exeercises
+### Exercises
 
 1. Compute the derivative of the pReLU activation function.
 
@@ -56,6 +56,8 @@ Relu has simple derivative function which lets some of th eparameter through or 
 
 `alpha = 0.1`
 `y = find_max(X) + alpha * find_min(X)`
+
+with torch.max the answer:
 
 ![](answer1.png)
 
@@ -88,6 +90,16 @@ Relu(x) constructs a continuous piecewise linear function for every x\in R. So, 
 
 Question 4:
 I think the most different between an MLP apply nonlinearity and MLP not apply nonlinearity is the time and complexity. In fact, MLPs applying nonlinearity such as Sigmoid and tanh are very expensive to calculate and find the derivative for gradient descent. So, we need something faster and Relu is a good choice to address these problem (6.x sigmoid).
+
+## Multi layer perceptron
+
+- we will try and define a multi layer percceptron model
+
+mlp prediction
+
+but investigate y_hat size.
+
+![](mlp_prediction.png)
 
 
 
