@@ -101,6 +101,18 @@ but investigate y_hat size.
 
 ![](mlp_prediction.png)
 
+### Exercises
+1. Change the value of the hyperparameter num_hiddens and see how this hyperparameter influences your results. Determine the best value of this hyperparameter, keeping all others
+constant.
+2. Try adding an additional hidden layer to see how it affects the results.
+3. How does changing the learning rate alter your results? Fixing the model architecture and
+other hyperparameters (including number of epochs), what learning rate gives you the best
+results?
+4. What is the best result you can get by optimizing over all the hyperparameters (learning rate,
+number of epochs, number of hidden layers, number of hidden units per layer) jointly?
+5. Describe why it is much more challenging to deal with multiple hyperparameters.
+6. What is the smartest strategy you can think of for structuring a search over multiple hyperparameters?
+
 
 
 
