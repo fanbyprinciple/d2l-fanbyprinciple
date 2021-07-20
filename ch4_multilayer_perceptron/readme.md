@@ -106,14 +106,47 @@ but investigate y_hat size.
 constant.
 
 ![](changing_hyperparameters.png)
+
+
 2. Try adding an additional hidden layer to see how it affects the results.
+
+```python
+# increasing number of hidden layers
+
+W1 = nn.Parameter(torch.randn(num_inputs, 128) * 0.01,requires_grad=True)
+b1 = nn.Parameter(torch.zeros(128),requires_grad=True)
+W2 = nn.Parameter(torch.randn(128, 64) * 0.01, requires_grad=True)
+b2 = nn.Parameter(torch.zeros(64), requires_grad=True)
+W3 = nn.Parameter(torch.randn(64,num_outputs)*0.01, requires_grad=True)
+b3 = nn.Parameter(torch.zeros(num_outputs),requires_grad=True)
+
+def net(X):
+    X=X.reshape(-1,num_inputs)
+    out = relu(torch.matmul(X,W1) + b1)
+    out = relu(torch.matmul(out,W2)+b2)
+    return torch.matmul(out,W3) + b3
+```
+
+![](adding_hidden_layer.png)
+
 3. How does changing the learning rate alter your results? Fixing the model architecture and
 other hyperparameters (including number of epochs), what learning rate gives you the best
 results?
+
+* changes the rate of convergence
+
 4. What is the best result you can get by optimizing over all the hyperparameters (learning rate,
 number of epochs, number of hidden layers, number of hidden units per layer) jointly?
+
+*  loss of 0.5
+
 5. Describe why it is much more challenging to deal with multiple hyperparameters.
+
+* combinatorial explosion because of more combination of hyperparameters
+
 6. What is the smartest strategy you can think of for structuring a search over multiple hyperparameters?
+
+* creating a matrices of all parameters and then optimally training over the combinationto find the result. some heuristic may be required.
 
 
 
