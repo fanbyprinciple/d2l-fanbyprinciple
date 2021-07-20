@@ -104,6 +104,8 @@ but investigate y_hat size.
 ### Exercises
 1. Change the value of the hyperparameter num_hiddens and see how this hyperparameter influences your results. Determine the best value of this hyperparameter, keeping all others
 constant.
+
+![](changing_hyperparameters.png)
 2. Try adding an additional hidden layer to see how it affects the results.
 3. How does changing the learning rate alter your results? Fixing the model architecture and
 other hyperparameters (including number of epochs), what learning rate gives you the best
