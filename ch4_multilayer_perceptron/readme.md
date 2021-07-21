@@ -148,6 +148,25 @@ number of epochs, number of hidden layers, number of hidden units per layer) joi
 
 * creating a matrices of all parameters and then optimally training over the combinationto find the result. some heuristic may be required.
 
+## Concise Multi layer perceptron
+
+![](concise_multilayerperceptron.png)
+
+### Exercises
+1. Try adding different numbers of hidden layers (you may also modify the learning rate). What
+setting works best?
+
+* it worked for me by just adding one more layer , and with SGD best earning rate was 0.1
+
+2. Try out different activation functions. Which one works best?
+
+* I tried ADAM but shd was the best activation.
+
+3. Try different schemes for initializing the weights. What method works best?
+
+* tried putting all linear layers to zero, but normal initialisation works best
+
+![](concise_mlp_exercise.png)
 
 
 
