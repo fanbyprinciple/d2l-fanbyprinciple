@@ -168,5 +168,34 @@ setting works best?
 
 ![](concise_mlp_exercise.png)
 
+## Model selection, Underfitting overfitting
+
+- points to consider, memorising data is not good, space requirements make it infeasible, generalisationofafair cointoss if taken enough sample would always be 1/2. if its not then there is sampling bias.
+
+- however model shouldnt be too generalised so as to catch onto spurious patterns
+
+- more the number of tunable parameter more the tendency to overfit
+
+- if more the range of value takenbu parameters more the case of overfitting
+
+- the number of taining examples if less
+
+- after model complexity ,model selection is important
+
+- Validation dataset
+
+- K fold validation -model is split into K subsets. And each time validation is done on the subset its not trained on. Validation error then is the average over K subsets.
+
+- If validation and training error both are high, with a little gap between them it means we are undergitting. Our model is too simple. If training error is severly lower than validation error , it means we are overfitting.
+
+- Dataset size -more data means morecomplex model.More data never hurts generally.
+
+## Polynomial Regression
+
+![](polynomial_regression.png)
+
+
+
+
 
 
