@@ -194,6 +194,18 @@ setting works best?
 
 ![](polynomial_regression.png)
 
+### Demonstrating fit :
+
+1. 3 variable normal fitting.
+
+- errors I encountered, changing type of tensor using `torch.type`
+- using `cross entropy loss` to do regresssion instead of `MSELoss`
+
+![](three_variable_normal_fitting.png)
+
+2. Creating a linear function. Underfitting.
+
+
 
 
 
