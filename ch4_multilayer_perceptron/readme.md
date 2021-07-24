@@ -203,7 +203,53 @@ setting works best?
 
 ![](three_variable_normal_fitting.png)
 
+
+the graph:
+
+![](normal_fit.png)
+
 2. Creating a linear function. Underfitting.
+
+![](underfit.png)
+
+3. Overfitting a linear function
+
+![](overfit.png)
+
+### Exercises
+
+1. Can you solve the polynomial regression problem exactly? Hint: use linear algebra.
+
+* dont know how to do it. exactly.
+
+2. Consider model selection for polynomials:
+    1. Plot the training loss vs. model complexity (degree of the polynomial). What do you
+    observe? What degree of polynomial do you need to reduce the training loss to 0?
+
+    ![](loss_vs_degree.png)
+
+    at about 5 degree it becomes zero.
+
+    2. Plot the test loss in this case.
+    
+    3. Generate the same plot as a function of the amount of data.
+
+* my graphs- 
+
+![](loss_plots.png)
+
+3. What happens if you drop the normalization (1/i!) of the polynomial features x
+i
+? Can you
+fix this in some other way?
+
+![](no_normalisation.png)
+
+* Maybe we can put our own normalisation feature mechanism, though I am not sure.
+
+4. Can you ever expect to see zero generalization error?
+
+* only when the environment conditions are fully known.
 
 
 
