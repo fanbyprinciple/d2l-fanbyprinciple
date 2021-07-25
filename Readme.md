@@ -63,13 +63,13 @@ Where else can you apply the end-to-end training approach, such as in Fig. 1.1.2
 ## 2.1 Mathematical operation
 
 - In mathematical notation, we would denote such a unary scalar operator (taking one input) by the
-signature f : R → R. This just means that the function is mapping from any real number (R) onto
+signature `f : R → R`. This just means that the function is mapping from any real number (R) onto
 another. Likewise, we denote a binary scalar operator (taking two real inputs, and yielding one
-output) by the signature f : R, R → R.
+output) by the signature `f : R, R → R`.
 
 - Element wise operation :
 Given any two vectors u and v of the same shape, and a binary
-operator f, we can produce a vector c = F(u, v) by setting ci ← f(ui, vi) for all i, where ci, ui, and vi are the ith elements of vectors c,u, and v. Here, we produced the vector-valued F : Rd,d → Rd
+operator f, we can produce a vector `c = F(u, v)` by setting ci ← f(ui, vi) for all i, where ci, ui, and vi are the ith elements of vectors c,u, and v. Here, we produced the vector-valued F : Rd,d → Rd
 by lifting the scalar function to an elementwise vector operation.
 
 ### Braodcasting mechanism
@@ -170,16 +170,16 @@ angle between them. We will formally introduce this notion of length later in th
 In linear algebra, a vector norm is a function f that maps a vector to a scalar, satisfying a handful
 of properties. Given any vector x, the first property says that if we scale all the elements of a vector
 by a constant factor α, its norm also scales by the absolute value of the same constant factor:
-    f(αx) = |α|f(x). (2.3.10)
+    `f(αx) = |α|f(x). (2.3.10)`
 
 The second property is the familiar triangle inequality:
-    f(x + y) ≤ f(x) + f(y). (2.3.11)
+    `f(x + y) ≤ f(x) + f(y). (2.3.11)`
 
 The third property simply says that the norm must be non-negative:
-    f(x) ≥ 0. (2.3.12)
+    `f(x) ≥ 0. (2.3.12)`
 
 That makes sense, as in most contexts the smallest size for anything is 0. The final property requires that the smallest norm is achieved and only achieved by a vector consisting of all zeros.
-    ∀i, [x]i = 0 ⇔ f(x) = 0. (2.3.13)
+    `∀i, [x]i = 0 ⇔ f(x) = 0. (2.3.13)`
 
 You might notice that norms sound a lot like measures of distance. And if you remember Euclidean
 distances (think Pythagorasʼ theorem) from grade school, then the concepts of non-negativity and
@@ -381,11 +381,11 @@ Vary m and n. Observe and analyze the experimental results.
 2. Given two events with probability P(A) and P(B), compute upper and lower bounds on
 P(A ∪ B) and P(A ∩ B). (Hint: display the situation using a Venn Diagram43.)
 
-dont know
+* dont know
 
 3. Assume that we have a sequence of random variables, say A, B, and C, where B only depends on A, and C only depends on B, can you simplify the joint probability P(A, B, C)?
 
-dont know
+* dont know
 
 P(A,B|C) formula of naive bayes needs to be applied
 
@@ -393,9 +393,7 @@ P(A,B|C) formula of naive bayes needs to be applied
 4. In Section 2.6.2, the first test is more accurate. Why not run the first test twice rather than
 run both the first and second tests?
 
-dont know
-
-both experiment may not be independent i missed the point of experiment
+* dont know. Both experiment may not be independent i missed the point of experiment
 
 ## Documentation
 
@@ -408,7 +406,7 @@ both experiment may not be independent i missed the point of experiment
 1. Look up the documentation for any function or class in the deep learning framework. Can
 you also find the documentation on the official website of the framework.
 
-i have looked up the documenation of fastai before.
+* I have looked up the documenation of fastai before.
 
 
 
