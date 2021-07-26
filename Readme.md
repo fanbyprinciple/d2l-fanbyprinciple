@@ -8,6 +8,20 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 
 -----
 
+# Important functions
+
+1. load_array - page 103
+2. synthetic_data - page 97
+3. sgd - page 100
+4. linreg - page 100
+5. squared_loss - page 100
+6. Timer - page 92
+7. use_svg_display, set_figsize - page 68
+8. Animator - page 122
+9. Accuracy - page 120
+10. cross_entropy - page 120
+11. evaluate_loss - page 149
+
 # Ch1 Introduction 
 
 ### Types of machine learning
@@ -408,7 +422,7 @@ both experiment may not be independent i missed the point of experiment
 1. Look up the documentation for any function or class in the deep learning framework. Can
 you also find the documentation on the official website of the framework.
 
-i have looked up the documenation of fastai before.
+I have looked up the documenation of fastai before.
 
 
 

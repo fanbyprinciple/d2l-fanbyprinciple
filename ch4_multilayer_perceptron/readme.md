@@ -251,6 +251,29 @@ fix this in some other way?
 
 * only when the environment conditions are fully known.
 
+## Weight decay
+
+- Is a way for mitigating overfitting.
+- removing features may turn out ot be costly to avoid overfitting.
+- We need a way to deal with function gradients
+- Weightdecay is l2regularisation, we add the norm as a penalising factor to the loss function
+- in this case l2 means ||w||^2 multiplied bya regularisation parameter lambda/2
+- if lambda=0 there is no regularisation, if >0 there is
+- l1 regularisation is lasso regularisation, l2 regularisation is ridge regularisation
+- l1 penalties lead to model creation from small number of parameters while l2 punished big weights in all parameters
+- since we not only update the weight we also try to bring it closer to zero in l2 regularisation thats why it is known as weight decay.
+- w <- (1-eta * lambda ) w - eta/batch_size * gradient of loss
+here , gradient of loss being  sum over btach(x )* sum over batch(w.T * x + b - y)
+
+### High dimensional linear regression
+
+Using linear regression on weight decay we have
+
+![](weight_decay_surprise.png)
+
+
+
+
 
 
 
