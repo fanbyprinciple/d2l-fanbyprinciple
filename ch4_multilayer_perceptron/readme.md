@@ -267,9 +267,92 @@ here , gradient of loss being  sum over btach(x )* sum over batch(w.T * x + b - 
 
 ### High dimensional linear regression
 
-Using linear regression on weight decay we have
+Using linear regression on weight decay we have implementation from scratch:
 
 ![](weight_decay_surprise.png)
+
+However when we use the default weight decay using SGD we get better result
+
+![](weight_decay_concise.png)
+
+### Exercises
+
+1. Experiment with the value of λ in the estimation problem in this section. Plot training and
+test accuracy as a function of λ. What do you observe?
+
+* as we increase wd it is making better train and test loss graph
+
+![](weight_decay_loss.png)
+
+2. Use a validation set to find the optimal value of λ. Is it really the optimal value? Does this
+matter?
+
+* the minimum loss is 0.02 at wd = 21-5 = 16. It is th eoptimal value for the validation set.
+
+![](valid_wd.png)
+
+3. What would the update equations look like if instead of ∥w∥
+2 we used ∑
+i
+|wi
+| as our penalty
+of choice (L1 regularization)?
+
+* It is strangely coming as linear
+
+```python
+# training for l1 norm
+model = nn.Sequential(nn.Linear(num_inputs, 1))
+
+for param in model.parameters():
+    param.data.normal_()
+    print(l1_norm(param.detach()))
+    
+loss = nn.MSELoss()
+
+optimizer = torch.optim.SGD(model.parameters(), lr = 0.03)
+
+valid_loss_array = []
+for epoch in range(20):
+    current_loss = 0
+    current_number = 0
+    for X, y in valid_dataloader:
+        l = loss(model(X),y) - l1_norm_with_abs(model[0].weight)
+        
+        optimizer.zero_grad()
+        l.backward()
+        optimizer.step()
+        
+        current_loss += l.detach()
+        current_number += len(y)
+    
+    valid_loss_array.append(current_loss/current_number)
+
+plt.plot(range(20), valid_loss_array)
+plt.grid(True)
+plt.show()
+
+```
+
+![](l1_norm.png)
+
+4. We know that ∥w∥
+2 = w⊤w. Can you find a similar equation for matrices (see the Frobenius
+norm in Section 2.3.10)?
+
+* This is Frobenius norm: f(αx) = |α|f(x).  I dont understand.
+
+5. Review the relationship between training error and generalization error. In addition to
+weight decay, increased training, and the use of a model of suitable complexity, what other
+ways can you think of to deal with overfitting?
+
+* larger data size, dropouts
+
+6. In Bayesian statistics we use the product of prior and likelihood to arrive at a posterior via
+P(w | x) ∝ P(x | w)P(w). How can you identify P(w) with regularization?
+
+* you ask good question but me no understand. how to get to p of w.
+
 
 
 
