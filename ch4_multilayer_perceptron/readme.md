@@ -353,6 +353,59 @@ P(w | x) ∝ P(x | w)P(w). How can you identify P(w) with regularization?
 
 * you ask good question but me no understand. how to get to p of w.
 
+## Dropout
+
+- Overfitting revisited - with overfitting, if you have more examples thatn features youll not overfit generally.
+- bias variance tradeoff - chooseing between flexibility and generalisation, like linear models have higher bias they can representonly a small number of functions, however the variance is less.
+
+- Neural network on th eother hand have a tendency to find associations between the features.
+
+- in 1995, Christopher bishop showed that adding noise was going to add regularisation, this idea was adopted by Srivastava et al in 2014 for creating dropout
+
+- standard dropout means zeroing someof the inputs at each layer. it was meant to break the coadaptation.
+
+- originally by bishop ateach training iteration, headded agauusian normal noise, but in dropout, in dropout the activation is replaced by either 0 or h/ 1-p
+
+- we generally dont apply dropout over testing data, unless we need to use it as a heuristic to measure how confident the model is.
+
+### Creating a dropout based prediction model from scratch
+
+![](dropout_from_scratch.png)
+
+### Creating a concise model
+
+![](dropout_concise.png)
+
+### Exercises
+
+1. What happens if you change the dropout probabilities for the first and second layers? In
+particular, what happens if you switch the ones for both layers? Design an experiment to
+answer these questions, describe your results quantitatively, and summarize the qualitative
+takeaways.
+
+* Nothing much changes based on the final accuracy.
+
+![](dropout_ex1.png)
+
+2. Increase the number of epochs and compare the results obtained when using dropout with
+those when not using it.
+
+* there is a significant difference in loss.
+
+![](dropout_ex2.png)
+
+3. What is the variance of the activations in each hidden layer when dropout is and is not applied? Draw a plot to show how this quantity evolves over time for both models.
+4. Why is dropout not typically used at test time?
+5. Using the model in this section as an example, compare the effects of using dropout and
+weight decay. What happens when dropout and weight decay are used at the same time?
+Are the results additive? Are there diminished returns (or worse)? Do they cancel each other
+out?
+6. What happens if we apply dropout to the individual weights of the weight matrix rather than
+the activations?
+7. Invent another technique for injecting random noise at each layer that is different from the
+standard dropout technique. Can you develop a method that outperforms dropout on the
+Fashion-MNIST dataset (for a fixed architecture)?
+
 
 
 

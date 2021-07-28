@@ -8,7 +8,7 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 
 -----
 
-# Important functions
+# Important functions saved into d2l
 
 1. load_array - page 103
 2. synthetic_data - page 97
@@ -21,6 +21,10 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 9. Accuracy - page 120
 10. cross_entropy - page 120
 11. evaluate_loss - page 149
+12. load_fashion_mnist - page 116
+13. show_images - page 115
+14. get_fashion_mnist_labels - page 115
+15. train_ch3 - page 121
 
 # Ch1 Introduction 
 
