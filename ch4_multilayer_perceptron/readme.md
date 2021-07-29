@@ -383,28 +383,84 @@ particular, what happens if you switch the ones for both layers? Design an exper
 answer these questions, describe your results quantitatively, and summarize the qualitative
 takeaways.
 
-* Nothing much changes based on the final accuracy. (apparently this is wrong, i am running the model will check back after running)
+* Nothing much changes based on the final accuracy to compare. 
 
 ![](dropout_ex1.png)
 
 2. Increase the number of epochs and compare the results obtained when using dropout with
 those when not using it.
 
-* there is a significant difference in loss.
+* there is a significant difference in loss. Iam getting comparative results in both.
 
 ![](dropout_ex2.png)
 
 3. What is the variance of the activations in each hidden layer when dropout is and is not applied? Draw a plot to show how this quantity evolves over time for both models.
+
+* What is meant by variance here do we just apply torch.var over the net.linear weight layers? thisis the graph I came up with.
+
+![](dropout_ex3.png)
+
 4. Why is dropout not typically used at test time?
+
+* Because we would like all the features weights to be useful and consequential to making the prediction.
+
 5. Using the model in this section as an example, compare the effects of using dropout and
 weight decay. What happens when dropout and weight decay are used at the same time?
 Are the results additive? Are there diminished returns (or worse)? Do they cancel each other
 out?
+
+* The returns are diminished when using both, compared to using them individually.
+
+![](dropout_ex5.png)
+
 6. What happens if we apply dropout to the individual weights of the weight matrix rather than
 the activations?
+
+* it is still training. But with some slight oscillation in loss. This is the forward implementation
+ ```python
+  def forward(self, X):
+        out = self.lin1(X.reshape(-1,784))
+        out = dropout_layer(out, self.dropout1)
+        out = self.relu(out)
+        out = self.lin2(out)
+        out = dropout_layer(out, self.dropout2)
+        out = self.relu(out)
+        out = self.lin3(out)
+
+        return out
+        
+ ```
+
+![](dropout_ex6.png)
+
 7. Invent another technique for injecting random noise at each layer that is different from the
 standard dropout technique. Can you develop a method that outperforms dropout on the
 Fashion-MNIST dataset (for a fixed architecture)?
+
+* I propose to add noise after each hidden layer.
+
+```python
+class net_epsilon(nn.Module):
+    def __init__(self, num_inputs=784, num_outputs=10, num_hidden1=256, num_hidden2=256, epsilon_m=0.02, epsilon_d=0.02):
+        super(net_epsilon, self).__init__()
+        self.lin1 = nn.Linear(num_inputs, num_hidden1)
+        self.lin2 = nn.Linear(num_hidden1, num_hidden2)
+        self.lin3 = nn.Linear(num_hidden2, num_outputs)
+        self.relu = nn.ReLU()
+        self.epsilon_m = epsilon_m
+        self.epsilon_d = epsilon_d
+        self.num_inputs = num_inputs
+    
+    def forward(self, X):
+        out = self.relu(self.lin1(X.reshape(-1,self.num_inputs)))
+        out = out + torch.normal(self.epsilon_m, self.epsilon_d, (out.shape))
+        out = self.relu(self.lin2(X.reshape(-1, self.num_inputs)))
+        out = out + torch.normal(self.epsilon_m, self.epsilon_d, (out.shape))
+        out = self.lin3(out)
+```
+
+![](dropout_ex7.png)
+
 
 ## Forward propagation, backpropogation and computational graphs
 
