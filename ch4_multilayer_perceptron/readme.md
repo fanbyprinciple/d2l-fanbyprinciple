@@ -383,7 +383,7 @@ particular, what happens if you switch the ones for both layers? Design an exper
 answer these questions, describe your results quantitatively, and summarize the qualitative
 takeaways.
 
-* Nothing much changes based on the final accuracy.
+* Nothing much changes based on the final accuracy. (apparently this is wrong, i am running the model will check back after running)
 
 ![](dropout_ex1.png)
 
@@ -406,6 +406,13 @@ the activations?
 standard dropout technique. Can you develop a method that outperforms dropout on the
 Fashion-MNIST dataset (for a fixed architecture)?
 
+## Forward propagation, backpropogation and computational graphs
+
+- so far we only cared about forward propagation preferring tohandle back proagationthrough grad function in pytorch.
+
+### Forward propagation
+
+- lets assume that we have.
 
 
 
