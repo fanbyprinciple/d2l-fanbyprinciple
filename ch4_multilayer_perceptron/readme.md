@@ -517,7 +517,23 @@ graph? How long do you expect the calculation to take?
 
     * smaller minibatch takes more time and less memory and vice versa. Its a time space tradeoff.
 
+My question now is what does X.grad give you what is that computation?
 
+Conceptually, autograd records a graph recording all of the operations that created the data as you execute operations, giving you a directed acyclic graph whose leaves are the input tensors and roots are the output tensors. By tracing this graph from roots to leaves, you can automatically compute the gradients using the chain rule.
+
+## Numerical stability and initialisation
+
+- The choice of initialisaition and the choice ofnon linear function is especially important lest it leads us to exploding or vanishing gradients.
+
+### Vanishing and exploding gradients
+
+- since we havea depp neural network we would have have multiplelayers of of activation to deal with , if h(l) = f(h(l-1)) when we derive the derivative d/dl*(h(l)) it would be W(h) * h(l-1)-> similarly for rest soit eventually become a product of all the layer weights, if the weights are too small then it creates vanishing gradient problem if too large then exploding gradient.
+
+- Sigmoid activation and problem of vanishing gradients.
+
+![](sigmoid_exploding.png)
+
+if the weights as=re too large or too small sigmoid vanishes.
 
 
 
