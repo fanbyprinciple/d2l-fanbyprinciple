@@ -468,8 +468,54 @@ class net_epsilon(nn.Module):
 
 ### Forward propagation
 
-- lets assume that we have.
+- Forward propogation is nothing but multiplying th eweights with features putting it thorugh an activation function and then figuring out loss, comparing it with base truth.
 
+### Computational graph with forward propagation
+
+- computational graphshows the relationship of various operator and operands.
+
+### Backpropagation
+
+- Backpropagation refers to the method of calculating the gradient of neural network parameters.
+- method traverses  in reverse order from output to input
+- given Y = f(X) and Z = g(Y) then the algorithm calculates dZ/dX = dZ/dY * dY/DX
+- more to come here
+
+### Exercises
+
+1. Assume that the inputs X to some scalar function f are n × m matrices. What is the dimensionality of the gradient of f with respect to X?
+
+* Dimensionality reamains the same I tried be look at X.grad values.
+
+![](grad_shape.png)
+
+2. Add a bias to the hidden layer of the model described in this section (you do not need to
+include bias in the regularization term).
+1. Draw the corresponding computational graph.
+2. Derive the forward and backward propagation equations.
+
+* given in the pic. There is almost no change.
+
+![](working_out_gradients.jpeg)
+
+3. Compute the memory footprint for training and prediction in the model described in this
+section.
+
+* If we are to assume that X belongs to R^d then , you would need to store dl/do, dh/dz, X, lambda, W(1), W(2), h, X.grad so considering X size is d then 4d + 4. Based on gradients calculated above. Rest all can be derived.
+
+4. Assume that you want to compute second derivatives. What happens to the computational
+graph? How long do you expect the calculation to take?
+
+* dont know how to come up with a solution to this
+
+5. Assume that the computational graph is too large for your GPU.
+    1. Can you partition it over more than one GPU?
+
+    * maybe computational grapha can be devided but there needs to be tmiing pipeline else one part would wait for the other. Maybe different batchwise the multiple GPU can be recruited.
+
+    2. What are the advantages and disadvantages over training on a smaller minibatch?
+
+    * smaller minibatch takes more time and less memory and vice versa. Its a time space tradeoff.
 
 
 
