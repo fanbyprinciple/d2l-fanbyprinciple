@@ -535,6 +535,59 @@ Conceptually, autograd records a graph recording all of the operations that crea
 
 if the weights as=re too large or too small sigmoid vanishes.
 
+- if too large then also goesto infinity.
+
+![](exploding_gradients.png)
+
+- breaking the symmetry.
+with same initialisation it might happenthat both hidden network getactivated in the same way, thus making multiple layers redundant.
+
+### Parameter initialisation 
+
+-  Default initialisation - either the system will initialise on its own or using normal initialisation.
+
+- Xavier initialisation -  we know that o = sumof(w*x)
+now if we take mean to be zero and variance to gamma^2 then, E(o) = sum of (E(w) E(x)) since x =0 => E(o) 0
+
+- similarly var (o) = E(o^2) - E(o)^2 = E(o^2) = E(w^2x^2) =  n * sigma^2 * gamma^2
+
+if we take n * sigma^2  = 1 then, taking similar condition for outpt we have, 1/2* (nin + nout) ^2 * sigma^2 = 1 => sgma = dq_root((2/nin + nout)^2)
+
+Note that the uniform distribution $U(-a, a)$ has variance $\frac{a^2}{3}$.
+Plugging $\frac{a^2}{3}$ into our condition on $\sigma^2$
+yields the suggestion to initialize according to
+
+$$U\left(-\sqrt{\frac{6}{n_\mathrm{in} + n_\mathrm{out}}}, \sqrt{\frac{6}{n_\mathrm{in} + n_\mathrm{out}}}\right).$$
+
+
+### Exercises
+
+1. Can you design other cases where a neural network might exhibit symmetry requiring breaking besides the permutation symmetry in an MLP's layers?
+
+* loss and regularisation 
+
+1. Can we initialize all weight parameters in linear regression or in softmax regression to the same value?
+
+* We can try it but it may lead to symmetry condition
+
+1. Look up analytic bounds on the eigenvalues of the product of two matrices. What does this tell you about ensuring that gradients are well conditioned?
+
+* The largest eigenvalue of such a matrix (symmetric) is equal to the matrix norm. Say your two matrices are A and B.
+
+∥AB∥≤∥A∥∥B∥=λ1,Aλ1,B
+
+where λ1,A is the largest eigenvalue of A and λ1,B is the largest eigenvalue of B. So the largest eigenvalue of the product is upper-bounded by the product of the largest eigenvalues of the two matrices. For a proof of what I just asserted, see: Norm of a symmetric matrix equals spectral radius
+
+In terms of the smallest, it looks like the product of the smallest two eigenvalues also gives you a lower bound on the smallest eigenvalue of the product. For a complete reference on how the eigenvalues are related, see: https://mathoverflow.net/questions/106191/eigenvalues-of-product-of-two-symmetric-matrices
+
+* Condition number (l) = max value of eigen value divided by min value of eigen value.
+If l >> 1 then it we say it is ill-conditioned
+If l approx = 1 the well-conditioned.
+
+1. If we know that some terms diverge, can we fix this after the fact? Look at the paper on layerwise adaptive rate scaling  for inspiration :cite:`You.Gitman.Ginsburg.2017`.
+
+* LARS uses seperate learning rate for each layer.
+
 
 
 
