@@ -588,6 +588,23 @@ If l approx = 1 the well-conditioned.
 
 * LARS uses seperate learning rate for each layer.
 
+## Environment and distribution shift
+
+- How the test environment changes the usabilityof model. Test conditions are drastically different thatn the trial conditions that we are notmally used to.
+
+### Types of distribution shift
+
+- what if the distribution is the same but the labels flip
+
+- covariate shift ? the test images are drastically different than the train data. for example the training data consisted of images of cats and dogs while the test data consisted of images ofcartoons that are cats and dogs.
+
+- label shift - as in the labels will change. But in deep learning its better to assume label change because they are low dimensional
+
+- concept shift - the concept of soft drink varies accross time and geopgraphy therefore labels though themmselves maynot change bbut the meaning of labels might.
+
+### examples were the shift affected
+
+- 
 
 
 
