@@ -879,9 +879,13 @@ do? What about the advertisers?
 
 ![](cats_and_dogs_class.png)
 
+Look up fastai cats and dogs for reference.
+
 * how is that supposed to work? if we build a classfifier and the accuracy is lower than some theshold do then we say we have built a covariatte shift detector?
 
 I am trying to build a cat and dog detector. Here: https://www.kaggle.com/fanbyprinciple/vanilla-pytorch-classification-of-dogs-vs-cats/edit
+
+![](normalisation)
 
 3. Implement a covariate shift corrector.
 
