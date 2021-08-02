@@ -877,6 +877,8 @@ do? What about the advertisers?
 
 2. Implement a covariate shift detector. Hint: build a classifier.
 
+![](cats_and_dogs_class.png)
+
 * how is that supposed to work? if we build a classfifier and the accuracy is lower than some theshold do then we say we have built a covariatte shift detector?
 
 I am trying to build a cat and dog detector. Here: https://www.kaggle.com/fanbyprinciple/vanilla-pytorch-classification-of-dogs-vs-cats/edit
