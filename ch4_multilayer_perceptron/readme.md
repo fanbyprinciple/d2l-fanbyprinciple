@@ -883,19 +883,35 @@ Look up fastai cats and dogs for reference.
 
 * how is that supposed to work? if we build a classfifier and the accuracy is lower than some theshold do then we say we have built a covariatte shift detector?
 
-I am trying to build a cat and dog detector. Here: https://www.kaggle.com/fanbyprinciple/vanilla-pytorch-classification-of-dogs-vs-cats/edit
+* I am trying to build a cat and dog detector. Here: https://www.kaggle.com/fanbyprinciple/pytorch-classification-of-dogs-vs-cats/
 
 ![](normalisation)
+
+* not generallising well need to check.
 
 3. Implement a covariate shift corrector.
 
 * okay cool.
+
+- https://towardsdatascience.com/covariate-shift-in-malware-classification-77a523dbd701
+
+Need to come back here after kaggle question.
 
 4. Besides distribution shift, what else could affect how the empirical risk approximates the
 risk?
 
 * changing environment, time, geography, bias of the people using it, culture assumptions.
 
+
+## Predicting house prices on kaggle
+
+### Downloading and caching datasets
+
+![](downloading_dataset.png)
+
+### Predicting on kaggle
+
+s
 
 
 
