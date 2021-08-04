@@ -911,8 +911,31 @@ risk?
 
 ### Predicting on kaggle
 
-s
+- removed the labels so that test data and train data could be combined into a single dataframe for applying transformations
 
+- preprocessing - we standardise the dataset by making it zero mean and unit variance x = x - mean / standard deviation. it is convenient for optimization and scaling the features.
+
+- we fill all not available values with 0.
+
+- one hot encoding of discrete features - For instance, “MSZoning” assumes the values “RL” and “RM”. Dropping the
+“MSZoning” feature, two new indicator features “MSZoning_RL” and “MSZoning_RM” are created
+with values being either 0 or 1. According to one-hot encoding, if the original value of “MSZoning” is “RL”, then “MSZoning_RL” is 1 and “MSZoning_RM" is 0
+
+- By values attribute we can extract Numpy format from pandas format and convert it into a tensor representing for training.
+
+- Training - we will start with a simple MSELoss for creating a baseline prediction here.
+
+- in datasets like these we care about relative quantities more than absollutequantities, as in ifwe make an error of predicting 1000  instead of 1500 for a datasetwith mean as 1200 itwould be a big error but not when then dataset mean is 25000.
+
+- Thus we use a specific kind of error function , root mean squared error between logarithms of predicted output and label, also used in competitions as it naturally makes it such that at low value of this error function the relative error (y_hat - y)/y is low
+
+`root(sum_over_n( (log(y_hat) - log(y))**2 ))`
+
+- clamping function - here we use a clamping function that is to further ensure that logarithm stays stable all values less than 1 is put at 1
+
+- we use adam optimizer - though the only benefit being it is insensitive to initial paramaters.
+
+- We use K fold cross validation to find the appropriate hyperparameters for the model. We create a function that returns ith fold of K fold validation. It is done by slicing out ith of test data and using it as validation.
 
 
 

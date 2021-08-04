@@ -25,6 +25,7 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 13. show_images - page 115
 14. get_fashion_mnist_labels - page 115
 15. train_ch3 - page 121
+16. download - page 189
 
 # Ch1 Introduction 
 
