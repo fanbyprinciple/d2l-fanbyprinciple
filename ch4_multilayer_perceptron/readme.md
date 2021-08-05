@@ -935,7 +935,12 @@ with values being either 0 or 1. According to one-hot encoding, if the original 
 
 - we use adam optimizer - though the only benefit being it is insensitive to initial paramaters.
 
-- We use K fold cross validation to find the appropriate hyperparameters for the model. We create a function that returns ith fold of K fold validation. It is done by slicing out ith of test data and using it as validation.
+- We use K fold cross validation to find the appropriate hyperparameters for the model. We create a function that returns ith fold of K fold validation. It is done by slicing out ith of test data and using it as validation. 
+
+here we create a single function that returns the ith slice of a K fold iteration that is it returns the ith slice while returning rest as training data.
+
+
+
 
 
 
