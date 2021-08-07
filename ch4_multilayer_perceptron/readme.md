@@ -942,6 +942,13 @@ here we create a single function that returns the ith slice of a K fold iteratio
 ![](kaggle_graph.png)
 
 
+The first submission made
+
+![](first_submission.png)
+
+https://www.kaggle.com/fanbyprinciple/notebook52cf0042a/edit
+
+
 
 
 
