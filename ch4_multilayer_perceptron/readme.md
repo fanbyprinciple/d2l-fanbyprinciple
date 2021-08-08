@@ -946,7 +946,11 @@ The first submission made
 
 ![](first_submission.png)
 
+Trying again on kaggle:
+
 https://www.kaggle.com/fanbyprinciple/notebook52cf0042a/edit
+
+![](kaggle_k_fold.png)
 
 
 
