@@ -953,6 +953,38 @@ https://www.kaggle.com/fanbyprinciple/notebook52cf0042a/edit
 ![](kaggle_k_fold.png)
 
 
+### Exercises
+
+1. Submit your predictions for this section to Kaggle. How good are your predictions?
+
+* I got a rmse value of 0.16703
+
+2. Can you improve your model by minimizing the logarithm of prices directly? What happens
+if you try to predict the logarithm of the price rather than the price?
+
+* The log rmse values are coming as Nan
+
+3. Is it always a good idea to replace missing values by their mean? Hint: can you construct a
+situation where the values are not missing at random?
+
+* It might be the case where the date data is given and dates in between are missing in that case we can put in the date
+
+4. Improve the score on Kaggle by tuning the hyperparameters through K-fold crossvalidation.
+
+* I have improved it once.
+
+5. Improve the score by improving the model (e.g., layers, weight decay, and dropout).
+
+* tried adding more layers but accuracy decreased.
+
+![](decreased_acc_housing.png)
+
+6. What happens if we do not standardize the continuous numerical features like what we have
+done in this section?
+
+* improper features size that are different for different features.
+
+
 
 
 
