@@ -48,3 +48,16 @@ network from it.
 
 ![](ex51_hydra.png)
 
+## Parameter management
+
+### Things we need to learn
+- accessing parameterfor visualisation
+- paramter initialisation
+- sharing accross componenets
+
+### Parameter initialisation
+- usually pytorch initialises weight uniformly by drawing from a range takinginto accoutn the input and output range
+- through `net.state_dict()` you can take all the parameter as a whole
+
+### 
+
