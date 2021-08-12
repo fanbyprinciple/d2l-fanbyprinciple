@@ -59,5 +59,14 @@ network from it.
 - usually pytorch initialises weight uniformly by drawing from a range takinginto accoutn the input and output range
 - through `net.state_dict()` you can take all the parameter as a whole
 
-### 
+### Exercises
+1. Design a layer that takes an input and computes a tensor reduction, i.e., it returns yk = i,j Wijkxixj .
 
+* Not sure what is expected but is it the answer?
+![](ex52_1.png)
+
+2. Design a layer that returns the leading half of the Fourier coefficients of the data.
+
+* These are fourier series
+
+![](ex52_fourier.png)
