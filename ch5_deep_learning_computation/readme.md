@@ -67,6 +67,63 @@ network from it.
 
 2. Design a layer that returns the leading half of the Fourier coefficients of the data.
 
-* These are fourier series
+* These are fourier series. But what is expectedoutof me 
 
 ![](ex52_fourier.png)
+
+
+## File I/O
+
+- loading and retrieving tensors
+```python
+torch.save(x, 'x-file')
+torch.load('x-file)
+```
+- Loading and saving model parameters- you need to define the architecture,but you can save the parameters through `net.state_dict()`
+
+### Exercises
+
+1. Even if there is no need to deploy trained models to a different device, what are the practical
+benefits of storing model parameters?
+
+* we can create checkpoints within the code and go back if required.
+
+2. Assume that we want to reuse only parts of a network to be incorporated into a network
+of a different architecture. How would you go about using, say the first two layers from a
+previous network in a new network?
+
+* this works `net[0].weight = nn.Parameter(clone.state_dict()['linear1.weight'])` 
+  `net[1] = another_net[1]`
+
+3. How would you go about saving the network architecture and parameters? What restrictions
+would you impose on the architecture
+
+* this works `torch.save(net, 'net')` and then load it into a new network.
+
+## GPUs
+
+- GPU has increased by a factor of 1000 every decade
+- `nvidia-smi` stats for nerds
+
+### Computing devices
+
+- About how to put devices into gpu and cpu
+
+
+### Exercises
+1. Try a larger computation task, such as the multiplication of large matrices, and see the difference in speed between the CPU and GPU. What about a task with a small amount of calculations?
+
+* marked difference at 100 tensors milli and micro seconds
+![](ex54_difference_bw_cpu_gpu.png)
+
+* at 1 tensor they are comparative 1.63 ms vs 1.59 ms
+
+2. How should we read and write model parameters on the GPU?
+3. Measure the time it takes to compute 1000 matrix-matrix multiplications of 100 × 100 matrices and log the Frobenius norm of the output matrix one result at a time vs. keeping a log on
+the GPU and transferring only the final result.
+4. Measure how much time it takes to perform two matrix-matrix multiplications on two GPUs
+at the same time vs. in sequence on one GPU. Hint: you should see almost linear scaling.
+
+
+
+
