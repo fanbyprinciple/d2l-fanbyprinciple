@@ -119,10 +119,18 @@ would you impose on the architecture
 * at 1 tensor they are comparative 1.63 ms vs 1.59 ms
 
 2. How should we read and write model parameters on the GPU?
+
+* by using `net.to(device=torch.device('cuda'))`
+
 3. Measure the time it takes to compute 1000 matrix-matrix multiplications of 100 × 100 matrices and log the Frobenius norm of the output matrix one result at a time vs. keeping a log on
 the GPU and transferring only the final result.
+
+* I did not get it but the difference between time in cpu and gpu is 40ms.
+
 4. Measure how much time it takes to perform two matrix-matrix multiplications on two GPUs
 at the same time vs. in sequence on one GPU. Hint: you should see almost linear scaling.
+
+* I have one GPU
 
 
 
