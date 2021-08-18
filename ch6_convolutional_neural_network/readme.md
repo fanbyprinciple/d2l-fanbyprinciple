@@ -99,4 +99,27 @@ kh and kw are for kernel,
 
 (nh − kh + 1) × (nw − kw + 1)
 
+## Convolutional layer
+
+- cross correlates the input and output and adds ascalar bias, to produce a bias.
+
+## edgedetectionin images
+
+- we construct a kernel K with a height of 1 and a width of 2. When we perform the crosscorrelation operation with the input, if the horizontally adjacent elements are the same, the output
+is 0. Otherwise, the output is non-zero.
+
+![](edge_detection.png)
+
+## Learning convolutional layers
+
+- We first construct a convolutional layer and initialize its kernel as a random
+tensor. Next, in each iteration, we will use the squared error to compare Y with the output of
+the convolutional layer. We can then calculate the gradient to update the kernel. For the sake of
+simplicity, in the following we use the built-in class for two-dimensional convolutional layers and
+ignore the bias.
+
+Do the exercise again!
+
+
+
 
