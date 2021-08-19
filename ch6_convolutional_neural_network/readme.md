@@ -120,6 +120,40 @@ ignore the bias.
 
 Do the exercise again!
 
+## featuremap and receptive field
+
+- feature map canbe said as learned representation in spatial dimension to the subsequent layer.
+- In CNNs for anyelement x of somelayer, its receptive field refers to al the lements of the previous layers that may affect the calculation in forward propagation.
+- Receptivefield may be larger than the actual calulations
+
+### Exercises
+
+1. Construct an image X with diagonal edges.
+    1. What happens if you apply the kernel K in this section to it?
+        * zero matrix.
+    2. What happens if you transpose X?
+        * No change
+    3. What happens if you transpose K?
+        * zero matrix.
+        
+2. When you try to automatically find the gradient for the Conv2D class we created, what kind
+of error message do you see?
+    * I am able to do `net.weights.grad`, when I try `net.grad` I get the error `'Conv2d' object has no attribute 'grad'`
+
+3. How do you represent a cross-correlation operation as a matrix multiplication by changing
+the input and kernel tensors?
+    * cross correlation is basically matrix multiplication between slices of tensorfrom X of the shape of kernel and summing.
+    * It can be done by padding Kand X based on what is needed to multiply
+
+4. Design some kernels manually.
+    1. What is the form of a kernel for the second derivative?
+        * okay in order to compute one way would be to manually compute the second derivative and then let see a kernel be made using backpropogation
+        https://dsp.stackexchange.com/questions/10605/kernels-to-compute-second-order-derivative-of-digital-image
+    2. What is the kernel for an integral?
+        * how do you actually make it manually
+3. What is the minimum size of a kernel to obtain a derivative of degree d
+        * dont know.
+
 
 
 
