@@ -154,6 +154,53 @@ the input and kernel tensors?
 3. What is the minimum size of a kernel to obtain a derivative of degree d
         * dont know.
 
+### padding
+
+- padding is important as convolutions take away most of the activations. So to detect features on the edge of the picture.
+- This means that height and width of the output of  would increase
+
+effectively size shape = (nh - kh + ph + 1)(nw - kw + pw + 1)
+
+- in many cases we would tryto set ph = kh -1 and pw = kw -1
+- this will make it wasier to predict output shape of the image of each layer, when construting the network
+- wewill pad [ph/2]
+- When the height and width of the convolution kernel are different, we can make the output and input have the same height and width by setting different padding numbers for height and width.
+
+- for a kernel size (5,3) we take padding to be = 2, 1 as 2 * 2 + 1 * 2 = 4,2 == 5-1, 3-1
+
+### Stride 
+
+- sometimes we miss intermediate activations inorder to either downsampleor improve operational efficiency
+- in general the output shape wehn stride is enabled is 
+(nh - kh + ph + sh)/sh ,  (nw - kw +  pw + sw)/sw
+
+if nh and wh are divisible by sh and sw then the output shape will be nh/sh, nw/sw
+
+### Exercises
+1. For the last example in this section, use mathematics to calculate the output shape to see if
+it is consistent with the experimental result.
+
+* it is consistent, |(8 -3 + 0 + 3)/3| , |(8-5+1+4)/4|
+
+2. Try other padding and stride combinations on the experiments in this section.
+
+*  hmm tried
+
+3. For audio signals, what does a stride of 2 correspond to?
+
+* it might be two time peridod long
+
+4. What are the computational benefits of a stride larger than 1
+
+* efficiency in calculation,downsampling
+
+## Multiple input and output channels
+
+-let talk about multiple inputs and multiple channels
+
+- 
+
+
 
 
 
