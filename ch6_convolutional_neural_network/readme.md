@@ -198,7 +198,23 @@ it is consistent with the experimental result.
 
 -let talk about multiple inputs and multiple channels
 
-- 
+### Multiple input channel
+
+when there are multiple inputs then each of the input is multiplied with kernel, so kernel len should beequal to the length of inputs.
+
+However in my case it didnot happen, outputs did not match. withthe actual ansergiven inbook.
+
+![](kernel_did_not_match.png)
+
+### Multiple output channel
+
+- We stack the values together. Here. but did not work again in my case. as in we iterate of values of K.
+
+## 1x1 conv layer
+
+- only computation occurs in channel dimension.
+- lot of complex neural network use this feature
+- need to review too.
 
 
 
