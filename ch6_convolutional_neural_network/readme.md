@@ -216,6 +216,8 @@ However in my case it didnot happen, outputs did not match. withthe actual anser
 - lot of complex neural network use this feature
 - need to review too.
 
+Wasable to make it run but still confuse about convolutions.
+
 
 
 
