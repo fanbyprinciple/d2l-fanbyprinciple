@@ -216,7 +216,102 @@ However in my case it didnot happen, outputs did not match. withthe actual anser
 - lot of complex neural network use this feature
 - need to review too.
 
-Wasable to make it run but still confuse about convolutions.
+Was able to make it run but still confuse about convolutions.
+
+### Exercises
+
+1. Assume that we have two convolution kernels of size $k_1$ and $k_2$, respectively (with no nonlinearity in between).
+    1. Prove that the result of the operation can be expressed by a single convolution.
+    * not sure
+
+    * tried to code it unsuccessfully
+    ![](wrong1.png)
+
+    1. What is the dimensionality of the equivalent single convolution?
+    * dont know
+    1. Is the converse true?
+    * dont know
+    
+1. Assume an input of shape $c_i\times h\times w$ and a convolution kernel of shape $c_o\times c_i\times k_h\times k_w$, padding of $(p_h, p_w)$, and stride of $(s_h, s_w)$.
+    1. What is the computational cost (multiplications and additions) for the forward propagation?
+    1. What is the memory footprint?
+
+    ![](calculations.png)
+    
+    1. What is the memory footprint for the backward computation?
+    * dont know
+    
+    1. What is the computational cost for the backpropagation?
+    * dont know
+    
+1. By what factor does the number of calculations increase if we double the number of input channels $c_i$ and the number of output channels $c_o$? What happens if we double the padding?
+
+    * calculations would be multiplied by $c_i$  and if $c_o$ it would be multiplied by length of $c_o$
+    * if we double the padding then calculation would be h-kh+ph* 2,w - kw + pw * 2
+    
+1. If the height and width of a convolution kernel is $k_h=k_w=1$, what is the computational complexity of the forward propagation?
+
+    * h - kh + 1, w - kw + 1 =  h, w
+    
+1. Are the variables `Y1` and `Y2` in the last example of this section exactly the same? Why?
+    
+    * it cameout same for me !
+    
+1. How would you implement convolutions using matrix multiplication when the convolution window is not $1\times 1$?
+    
+    * DONT KNOW. 
+
+    * here is my attempt
+
+    ![](wrong2.png)
+
+## Pooling
+
+- thorugh the use of pooling what we are trying toaccomplish is -
+1. make the final neural network insensitive to pixelshift
+2. reduce the resolution of imageas we go higher up in layers, downsampling.
+
+- pooling is simplar to cros correlation function as in it has a window that slides over the entire frame. 
+- however it does not have a kernel, instead it measures the average or mean value over the window.
+
+- pooling window of pxq would result in us having a pxq pooling layer.
+
+### padding and stride
+
+- by default the pool size has same dimensions. So we can say `nn.MaxPool2d(3)`
+
+### Multiple channels
+
+- wecan have multiple channelsof inputs, the channel isretained in maxpooling operations.
+
+### Exercises
+
+1. Can you implement average pooling as a special case of a convolution layer? If so, do it.
+2. Can you implement maximum pooling as a special case of a convolution layer? If so, do it.
+
+* It can be done but we need to modify the convolution layer, or find the special kernel. I couldnt so I modified the operation itself, not the right answer I guess.
+
+![](maxpool_as_corr.png)
+
+3. What is the computational cost of the pooling layer? Assume that the input to the pooling
+layer is of size c×h×w, the pooling window has a shape of ph ×pw with a padding of (ph, pw)
+and a stride of (sh, sw).
+
+* need to do 
+
+4. Why do you expect maximum pooling and average pooling to work differently?
+
+* because max pooling will give maximum value from the neighbors while average pooling would consider all the neighbors. I expect max pooling to be faster.
+
+5. Do we need a separate minimum pooling layer? Can you replace it with another operation?
+
+* This seems like a trick question, but one way is to multiply X by -1 and then do max pooling.
+
+6. Is there another operation between average and maximum pooling that you could consider
+(hint: recall the softmax)? Why might it not be so popular?
+
+* taking average of the log and then computing the maximum value devide by sum of log. It might be computationally intensive.
+
 
 
 
