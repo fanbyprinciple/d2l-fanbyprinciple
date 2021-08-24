@@ -297,7 +297,7 @@ Was able to make it run but still confuse about convolutions.
 layer is of size c×h×w, the pooling window has a shape of ph ×pw with a padding of (ph, pw)
 and a stride of (sh, sw).
 
-* need to do 
+* I expect it to be (h- ph - sh)/sh * (w - pw -sw)/sw * len(c) * time taken to find max value.
 
 4. Why do you expect maximum pooling and average pooling to work differently?
 
@@ -311,6 +311,26 @@ and a stride of (sh, sw).
 (hint: recall the softmax)? Why might it not be so popular?
 
 * taking average of the log and then computing the maximum value devide by sum of log. It might be computationally intensive.
+
+# Making Lenet
+
+- Lenet by yan lecunn was actually used in atm machines.
+- Each comvolution layer uses a 5x5 kernel and a sigmoid activation function
+- 6 output channel for first convolution layer while second one has 16
+- 2x2 pooling operation reduces the dimensionality by a factor of 2
+- . The first convolutional layer uses 2 pixels of
+padding to compensate for the reduction in height and width that would otherwise result from using a 5×5 kernel. In contrast, the second convolutional layer forgoes padding, and thus the height
+and width are both reduced by 4 pixels. As we go up the stack of layers, the number of channels
+increases layer-over-layer from 1 in the input to 6 after the first convolutional layer and 16 after
+the second convolutional layer. However, each pooling layer halves the height and width. Finally,
+each fully-connected layer reduces dimensionality, finally emitting an output whose dimension
+matches the number of classes
+
+"""python
+for layer in net:
+    X = layer(X)`
+    print(f"Shape of {layer.__class__.__name__} : {X.shape}")
+"""
 
 
 
