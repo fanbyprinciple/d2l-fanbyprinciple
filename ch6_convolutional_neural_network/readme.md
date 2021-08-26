@@ -332,7 +332,7 @@ for layer in net:
     print(f"Shape of {layer.__class__.__name__} : {X.shape}")
 """
 
-
+![](lenet.png)
 
 
 
