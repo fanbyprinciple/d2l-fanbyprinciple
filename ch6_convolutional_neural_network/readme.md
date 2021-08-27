@@ -334,6 +334,52 @@ for layer in net:
 
 ![](lenet.png)
 
+### Exercises
 
+1. Replace the average pooling with maximum pooling. What happens?
 
+    * has the almost the same .8177 and .8148
+
+    ![](max_pool_accuracy.png)
+
+1. Try to construct a more complex network based on LeNet to improve its accuracy.
+    1. Adjust the convolution window size.
+    1. Adjust the number of output channels.
+    1. Adjust the activation function (e.g., ReLU).
+    1. Adjust the number of convolution layers.
+    1. Adjust the number of fully connected layers.
+    1. Adjust the learning rates and other training details (e.g., initialization and number of epochs.)
+    
+    * my changed network.
+    ```python
+    lenet_improved = nn.Sequential(nn.Conv2d(1, 6, kernel_size=5, padding=2), nn.ReLU(),
+                    nn.AvgPool2d(kernel_size=2, stride=2),
+                    nn.Conv2d(6, 16, kernel_size=5), nn.ReLU(),
+                    nn.AvgPool2d(kernel_size=2, stride=2),
+                    nn.Conv2d(16, 32, kernel_size=4), nn.ReLU(),
+                    nn.AvgPool2d(kernel_size=2, stride=2), nn.Flatten(),
+                    nn.Linear(32, 240), nn.ReLU(),
+                    nn.Linear(240,120), nn.ReLU(),
+                    nn.Linear(120, 84), nn.ReLU(), nn.Linear(84, 10))
+
+    ```
+    
+1. Try out the improved network on the original MNIST dataset.
+
+    * did try.
+
+    ![](best_accuracy.png)
+    
+1. Display the activations of the first and second layer of LeNet for different inputs (e.g., sweaters and coats).
+
+    * was this what was meant?
+    
+    ```python
+    activation_from_first = nn.Sequential(net[0], net[1])
+    activation_from_second = nn.Sequential(net[0],net[1], net[2], net[3])
+
+    activation_from_first(X[0].unsqueeze(0)).shape, activation_from_second(X[2].unsqueeze(0)).shape
+
+    ```
+    ![](first_and_second_activation.png)
 
