@@ -13,4 +13,7 @@ time, we use a stride of 4 to greatly reduce the height and width of the
 output. Here, the number of output channels is much larger than that in
 LeNet
 
+Due to memory error goota try on g=kaggle to train
+
+https://www.kaggle.com/fanbyprinciple/implementing-cnns-in-the-name-of-fashion/edit
 -
