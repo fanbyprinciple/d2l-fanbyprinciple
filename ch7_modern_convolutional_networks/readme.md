@@ -86,6 +86,19 @@ Trying to train a new network to verify my accuracy
 
 https://www.kaggle.com/fanbyprinciple/cifar10-with-pytorch/edit
 
+This is atleast more like it
+![](pytorch_cifar.png)
+
+Based on that I created another notebook for a smaller alexnet model
+
+https://www.kaggle.com/fanbyprinciple/alex-net-small/edit
+
+![](alex_net_small.png)
+
+## VGG network
+
+
+
 
 
 
