@@ -97,6 +97,23 @@ https://www.kaggle.com/fanbyprinciple/alex-net-small/edit
 
 ## VGG network
 
+- VGG stands for visual geometry group, eponymously giving it their name to repeating blocks
+
+### VGG blocks
+
+- One block consists of a convolutional layer with padding, Non linearity such as ReLU, and then a maxpooling layer
+
+- The origanl authors employed a 3x3 kernelwith a padding of 1 and 2x2 maxpooling layer
+
+- Similar to alexnet and lenet, VGG also has linear layers aftwerwars
+
+- since again it difficult to make VGG 11 work we used a new architeture VGG7
+
+
+
+
+
+
 
 
 
