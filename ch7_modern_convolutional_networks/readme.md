@@ -109,7 +109,48 @@ https://www.kaggle.com/fanbyprinciple/alex-net-small/edit
 
 - since again it difficult to make VGG 11 work we used a new architeture VGG7
 
+didnt train at .001
 
+Trying to load a VGG from path
+
+```python
+import torch 
+import torchvision
+import os
+
+# Suppose you are trying to load pre-trained resnet model in directory- models\resnet
+
+os.environ['TORCH_HOME'] = 'models\\resnet' #setting the environment variable
+resnet = torchvision.models.resnet18(pretrained=True)
+```
+
+Even when trying multiple lr the trianing is indifferent
+
+![](indifferent_training.png)
+
+### Exercises
+
+1. When printing out the dimensions of the layers we only saw 8 results rather than 11. Where
+did the remaining 3 layer information go?
+
+* in maxpool
+
+2. Compared with AlexNet, VGG is much slower in terms of computation, and it also needs
+more GPU memory. Analyze the reasons for this.
+
+* it has more conv layers
+
+3. Try changing the height and width of the images in Fashion-MNIST from 224 to 96. What
+influence does this have on the experiments?
+
+* it willrun faster
+
+4. Refer to Table 1 in the VGG paper (Simonyan & Zisserman, 2014) to construct other common
+models, such as VGG-16 or VGG-19.
+
+* it can be done but my GPU says hi
+
+Maybe I need to look at alex perrson on how totrain.
 
 
 
