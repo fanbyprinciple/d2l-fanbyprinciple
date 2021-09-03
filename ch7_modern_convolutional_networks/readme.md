@@ -152,6 +152,7 @@ models, such as VGG-16 or VGG-19.
 
 Maybe I need to look at alex perrson on how totrain.
 
+I was able to train a pretrained model. here: https://www.kaggle.com/fanbyprinciple/fine-tuning-a-vgg-model-on-custom-dataset/edit
 
 
 
