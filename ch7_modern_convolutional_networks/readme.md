@@ -170,15 +170,39 @@ first layer is typically set by the user. The subsequent window shapes are fixed
 
 Need to design a new cnn to combat this.
 
+![](training_custom.png)
 
+### Exercises
 
+1. Tune the hyperparameters to improve the classification accuracy.
+    * its not tuning based on stuff
+    training nin
+    ![](nin_training.png)
 
+    training normal network with the same methods works
+    ![](training_custom.png)
 
+    So I am thinking its a learning rate issue. But how do I find an optimium lr.
 
+2. Why are there two 1 × 1 convolutional layers in the NiN block? Remove one of them, and then observe and analyze the experimental phenomena.
+    * Not able to train 1x1 I dunno
+    
+3. Calculate the resource usage for NiN.
+    * How do you calculate this. I have been seeing this question for past few exercises.
+    1. What is the number of parameters? 
+    2. What is the amount of computation?
+    3. What is the amount of memory needed during training?
+    4. What is the amount of memory needed during prediction?
+    
+4. What are possible problems with reducing the 384 × 5 × 5 representation to a 10 × 5 × 5 representation in one step. 
 
+    * the size would lead to certain problems likelosing intermediate conv layer info.
 
+## GoogleNet
 
-
+GoogLeNet won the ImageNet Challenge, proposing a structure that combined the
+strengths of NiN and paradigms of repeated blocks (Szegedy et al., 2015). One focus of the paper
+was to address the question of which sized convolution kernels are best. After all, previous popular networks employed choices as small as 1 × 1 and as large as 11 × 11.
 
 
 
