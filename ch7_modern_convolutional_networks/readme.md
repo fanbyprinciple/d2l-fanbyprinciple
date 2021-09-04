@@ -152,7 +152,26 @@ models, such as VGG-16 or VGG-19.
 
 Maybe I need to look at alex perrson on how totrain.
 
-I was able to train a pretrained model. here: https://www.kaggle.com/fanbyprinciple/fine-tuning-a-vgg-model-on-custom-dataset/edit
+I was able to train a pretrained model.
+Here: https://www.kaggle.com/fanbyprinciple/fine-tuning-a-vgg-model-on-custom-dataset/edit
+
+![](vgg_pretrained.png)
+
+## network in Network
+
+Network in network is about to use an MLP on each pixel of channel seperately. 
+So it will 1x1 convolution across the image. 
+
+The NiN block consists of one convolutional layer followed by two 1 × 1 convolutional layers that act
+as per-pixel fully-connected layers with ReLU activations. The convolution window shape of the
+first layer is typically set by the user. The subsequent window shapes are fixed to 1 × 1.
+
+![](training_nin.png)
+
+Need to design a new cnn to combat this.
+
+
+
 
 
 
