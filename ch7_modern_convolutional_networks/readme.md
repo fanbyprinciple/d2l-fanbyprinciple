@@ -204,5 +204,15 @@ GoogLeNet won the ImageNet Challenge, proposing a structure that combined the
 strengths of NiN and paradigms of repeated blocks (Szegedy et al., 2015). One focus of the paper
 was to address the question of which sized convolution kernels are best. After all, previous popular networks employed choices as small as 1 × 1 and as large as 11 × 11.
 
+it consist of 4 individual network with different activations.
+
+To gain some intuition for why this network works so well, consider the combination of the filters.
+They explore the image in a variety of filter sizes. This means that details at different extents can
+be recognized efficiently by filters of different sizes.
+
+![](inception_v3_model.png)
+
+trying to train net at : https://www.kaggle.com/fanbyprinciple/inception-net/edit
+
 
 
