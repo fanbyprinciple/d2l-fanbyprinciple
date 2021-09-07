@@ -214,5 +214,66 @@ be recognized efficiently by filters of different sizes.
 
 trying to train net at : https://www.kaggle.com/fanbyprinciple/inception-net/edit
 
+## Exercises
+
+
+
+
+## Batch Normalisation
+
+- we first normalize the inputs (of batch normalization) by subtracting
+their mean and dividing by their standard deviation, where both are estimated based on the statistics of the current minibatch. Next, we apply a scale coefficient and a scale offset. It is precisely
+due to this normalization based on batch statistics that batch normalization derives its name.
+
+`BN = gamma * X - ub/sigmab + betab`
+
+-Where, gamma is the scale parameter.
+       ub is the mean of batch
+       sigmab is th estandard deviation
+       betab is the shiftparameter.
+gamma and betab have the same shape as x.
+
+- batch normalisation allows for aggressive training rates
+
+- sigmab of devaition = 1/batchsize * sumoverbatch(x-meanofbatch)^2+ epsilon
+
+- we add epsilon so that there should be no divisoin by zero error.
+
+- Batch boramalisation is different for filly connected layers and convolutional network
+
+1. For fully connected layers
+
+- Denoting the input to the fully-connected layer by x, the affine transformation by Wx + b
+(with the weight parameter W and the bias parameter b), and the activation function by ϕ, we
+can express the computation of a batch-normalization-enabled, fully-connected layer output h as
+follows:
+- h = ϕ(BN(Wx + b)).
+
+
+2. For Convolutional Layers
+
+- Similarly, with convolutional layers, we can apply batch normalization after the convolution and
+before the nonlinear activation function. 
+
+- When the convolution has multiple output channels, we
+need to carry out batch normalization for each of the outputs of these channels, and each channel
+has its own scale and shift parameters, both of which are scalars. 
+
+- Assume that our minibatches contain m examples and that for each channel, the output of the convolution has height p and
+width q. For convolutional layers, we carry out each batch normalization over the m·p·q elements
+per output channel simultaneously. Thus, we collect the values over all spatial locations when
+computing the mean and variance and consequently apply the same mean and variance within a
+given channel to normalize the value at each spatial location.
+
+- Putting aside the algorithmic details, note the design pattern underlying our implementation of
+the layer. Typically, we define the mathematics in a separate function, say batch_norm. We then
+integrate this functionality into a custom layer, whose code mostly addresses bookkeeping matters, such as moving data to the right device context, allocating and initializing any required variables, keeping track of moving averages (here for mean and variance), and so on. This pattern
+enables a clean separation of mathematics from boilerplate code.
+
+## Controversy regarding batch norm
+
+- authors mentioned that batch norm works due to covariate shift, however it is seen that
+
+
 
 
