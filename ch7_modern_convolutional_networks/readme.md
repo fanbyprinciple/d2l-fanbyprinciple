@@ -274,6 +274,10 @@ enables a clean separation of mathematics from boilerplate code.
 
 - authors mentioned that batch norm works due to covariate shift, however it is seen that
 
+However when we try to train it, it isn't working that well. In fact its not working at all.
+Lets try lenet on a new notebook and see.
+
+![](lenet_batchnorm_not_training.png)
 
 
 
