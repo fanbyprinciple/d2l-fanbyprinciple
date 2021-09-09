@@ -279,5 +279,12 @@ Lets try lenet on a new notebook and see.
 
 ![](lenet_batchnorm_not_training.png)
 
+Fastai makes learning look so easy
+
+![](fastai_easy.png)
+
+Will use it here, to find optimal learning rate.
+
+https://docs.fast.ai/migrating_pytorch
 
 
