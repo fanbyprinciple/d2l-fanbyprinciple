@@ -287,4 +287,8 @@ Will use it here, to find optimal learning rate.
 
 https://docs.fast.ai/migrating_pytorch
 
+made a kaggle notebook for using pytorch with fastai
+
+https://www.kaggle.com/fanbyprinciple/combining-vanilla-pytorch-and-fastai/edit
+
 
