@@ -214,10 +214,43 @@ be recognized efficiently by filters of different sizes.
 
 trying to train net at : https://www.kaggle.com/fanbyprinciple/inception-net/edit
 
-## Exercises
+### Exercises
 
+1. There are several iterations of GoogLeNet. Try to implement and run them. Some of them include the following:
 
+    • Add a batch normalization layer (Ioffe & Szegedy, 2015), as described later in Section 7.5.
+    https://arxiv.org/pdf/1502.03167v2.pdf
+    
+    https://stackoverflow.com/questions/37624279/how-to-properly-add-and-use-batchnormlayer#:~:text=BatchNormLayer%20should%20be%20added%20after%20the%20dense%20or,if%20you%20added%20BatchNormLayer%20after%20or%20convolution%2Fdense%20layer.
+    
+    • Make adjustments to the Inception block (Szegedy et al., 2016).
+    
+    • Use label smoothing for model regularization (Szegedy et al., 2016)
 
+    • Include it in the residual connection (Szegedy et al., 2017), as described later in Section 7.6.
+
+2. What is the minimum image size for GoogLeNet to work?
+
+* I found out that it was around 299. from https://pytorch.org/hub/pytorch_vision_inception_v3/
+
+it says that :
+
+```
+All pre-trained models expect input images normalized in the same way, i.e. mini-batches of 3-channel RGB images of shape (3 x H x W), where H and W are expected to be at least 299. The images have to be loaded in to a range of [0, 1] and then normalized using mean = [0.485, 0.456, 0.406] and std = [0.229, 0.224, 0.225].
+```
+3. Compare the model parameter sizes of AlexNet, VGG, and NiN with GoogLeNet. How do the
+latter two network architectures significantly reduce the model parameter size?
+
+* GoogleNet has 22 layer, and almost 12x less parameters (So faster and less then Alexnet and much more accurate).
+* without counting the aux it has 51668 parameters.
+* function to calculate the parameters
+```python
+counter = 0
+
+for param in inception.parameters():
+    counter += len(param)
+print(counter)
+```
 
 ## Batch Normalisation
 
@@ -290,5 +323,8 @@ https://docs.fast.ai/migrating_pytorch
 made a kaggle notebook for using pytorch with fastai
 
 https://www.kaggle.com/fanbyprinciple/combining-vanilla-pytorch-and-fastai/edit
+
+
+
 
 
