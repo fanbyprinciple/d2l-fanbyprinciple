@@ -30,3 +30,5 @@ With default pytorch functions,
 
 tried lr finder. Ithink I need to update training loop.
 
+![](finally_trained.png)
+
