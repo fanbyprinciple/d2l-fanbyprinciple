@@ -1,5 +1,7 @@
 # Ch7 Mordern Convolutional Networks
 
+maybe I take this class after this chapter:  https://cs231n.github.io/convolutional-networks/#overview
+
 * we would be using multiple architectures and implementing it
 
 * reason for the growth - 1. good dataholding capacity 2. good gpu
@@ -67,7 +69,7 @@ Finally was able to "train" it but it looks more like a heartbeat than anything
     2. What is the dominant part for computation in AlexNet?
         * the neuralnetwork 3 cnns
     3. How about memory bandwidth when computing the results?
-        * more than 100 mb
+        * more than 128 mb
 5. Apply dropout and ReLU to LeNet-5. Does it improve? How about preprocessing?
 
    ```python

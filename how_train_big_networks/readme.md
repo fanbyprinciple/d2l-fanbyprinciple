@@ -32,3 +32,19 @@ tried lr finder. Ithink I need to update training loop.
 
 ![](finally_trained.png)
 
+## training alexnet
+
+It took me 6min 21 seconds for 3 epochs and training accuracy of 88.7.The file is in revisted folder ch7.
+
+Here is afunction for looking at network parameters:
+`summary()`
+
+![](alex_params.png)
+
+## Andrej Karpathy's take
+
+https://cs231n.github.io/convolutional-networks/#overview
+
+- convnet are neural networks but wiht images so it allows us to design architectural changes that would make our job easier.
+- With simple network, image size of 3 X 224 X 224 will have to handle atleast 150528 parameters which is a handful
+
