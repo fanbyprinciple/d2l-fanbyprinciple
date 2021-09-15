@@ -140,17 +140,23 @@ did the remaining 3 layer information go?
 2. Compared with AlexNet, VGG is much slower in terms of computation, and it also needs
 more GPU memory. Analyze the reasons for this.
 
-* it has more conv layers
+* it has more conv layers also linear layer take most of the memory
 
 3. Try changing the height and width of the images in Fashion-MNIST from 224 to 96. What
 influence does this have on the experiments?
 
-* it willrun faster
+* it willrun faster, it may fail at lower resolutions
 
 4. Refer to Table 1 in the VGG paper (Simonyan & Zisserman, 2014) to construct other common
 models, such as VGG-16 or VGG-19.
 
 * it can be done but my GPU says hi
+```python
+VGG_19_arch = ((2,64), (2,128), (2,256), (4,512), (4,512))
+
+VGG_16_arch = ((2,64), (2,128), (2,256), (3,512), (3,512))
+
+```
 
 Maybe I need to look at alex perrson on how totrain.
 
@@ -158,6 +164,8 @@ I was able to train a pretrained model.
 Here: https://www.kaggle.com/fanbyprinciple/fine-tuning-a-vgg-model-on-custom-dataset/edit
 
 ![](vgg_pretrained.png)
+
+Refer to revisit folder for more info.
 
 ## network in Network
 
