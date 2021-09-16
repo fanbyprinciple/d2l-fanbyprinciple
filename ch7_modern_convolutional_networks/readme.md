@@ -203,6 +203,8 @@ Need to design a new cnn to combat this.
     2. What is the amount of computation?
     3. What is the amount of memory needed during training?
     4. What is the amount of memory needed during prediction?
+
+    ![](nin_params.png)
     
 4. What are possible problems with reducing the 384 × 5 × 5 representation to a 10 × 5 × 5 representation in one step. 
 
