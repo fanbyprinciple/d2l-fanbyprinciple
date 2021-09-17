@@ -29,7 +29,7 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 17. corr2d - page 230
 18. evaluate_accuracy_on_gpu - page 250
 19. train_ch6 - page 251
-
+20. softmax(page 123), negative log liklihood (page 126), nn.CrossEntropyLoss(page 136), SGD (page 116)
 # Ch1 Introduction 
 
 ### Types of machine learning

@@ -12,7 +12,7 @@ Memory footprint.
 
 ![](vgg_params.png)
 
-Need to revisit softmax, negative log liklihood (page 126), nn.CrossEntropyLoss(136), SGD
+Need to revisit softmax, negative log liklihood (page 126), nn.CrossEntropyLoss(136), SGD (page 116)
 
 it did not train at 0.05 or 0.1.
 
@@ -26,6 +26,10 @@ Another problem that I came accross wass efficient memory management. The tensor
 
 ![](nin_training.png)
 
-Not exactly training properly.
+Not exactly training properly at lr 0.1
+
+## Inception
+
+Working oninception.
 
 
