@@ -30,6 +30,10 @@ Not exactly training properly at lr 0.1
 
 ## Inception
 
-Working oninception.
+Working on inception.
+
+## Wide resnet 2
+
+![](wide_resnet_2.png)
 
 
