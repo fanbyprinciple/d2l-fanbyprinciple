@@ -10,6 +10,8 @@ https://d2l.ai/chapter_installation/index.html#subsec-gpu
 
 # Important functions saved into d2l
 
+All pytorch function are found here :  https://d2l.ai/_modules/d2l/torch.html
+
 1. load_array - page 103
 2. synthetic_data - page 97
 3. sgd - page 100
