@@ -346,6 +346,9 @@ made a kaggle notebook for using pytorch with fastai
 
 https://www.kaggle.com/fanbyprinciple/combining-vanilla-pytorch-and-fastai/edit
 
+batchnorm is training with the d2l function, need to create my own functions to do it.
+
+
 
 
 

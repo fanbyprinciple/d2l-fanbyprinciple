@@ -38,6 +38,12 @@ Working on inception.
 
 ![](wide_resnet_2.png)
 
+## Applying batchnorm to lenet
+
+Default batchnorm is training
+
+![](batchnorm.png)
+
 
 
 
