@@ -32,8 +32,12 @@ Not exactly training properly at lr 0.1
 
 Working on inception.
 
+![](googlenet.png)
+
 ## Wide resnet 2
 
 ![](wide_resnet_2.png)
+
+
 
 

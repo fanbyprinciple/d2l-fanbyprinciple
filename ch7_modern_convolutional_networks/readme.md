@@ -266,6 +266,16 @@ print(counter)
 
 ## Batch Normalisation
 
+### why ? 
+
+- standardisation
+
+- activation magnitudes are different
+
+- deep networks face overfitting issue
+
+### how ?
+
 - we first normalize the inputs (of batch normalization) by subtracting
 their mean and dividing by their standard deviation, where both are estimated based on the statistics of the current minibatch. Next, we apply a scale coefficient and a scale offset. It is precisely
 due to this normalization based on batch statistics that batch normalization derives its name.
