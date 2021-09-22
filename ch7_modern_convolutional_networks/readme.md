@@ -347,7 +347,32 @@ made a kaggle notebook for using pytorch with fastai
 https://www.kaggle.com/fanbyprinciple/combining-vanilla-pytorch-and-fastai/edit
 
 batchnorm is training with the d2l function, need to create my own functions to do it.
+Look in revisit folder,
+![](lenet_with_batchnorm.png)
 
+
+
+## Exercises
+
+1.. Can we remove the bias parameter from the fully-connected layer or the convolutional layer
+before the batch normalization? Why?
+2. Compare the learning rates for LeNet with and without batch normalization.
+
+training lenet without batchnorm
+![](lenet_without_batchnorm.png)
+
+1. Plot the increase in training and test accuracy.
+2. How large can you make the learning rate?
+3. Do we need batch normalization in every layer? Experiment with it?
+
+![](lenet_with_bn_on_every_layer.png)
+
+4. Can you replace dropout by batch normalization? How does the behavior change?
+5. Fix the parameters beta and gamma, and observe and analyze the results.
+6. Review the online documentation for BatchNorm from the high-level APIs to see the other
+applications for batch normalization.
+7. Research ideas: think of other normalization transforms that you can apply? Can you apply
+the probability integral transform? How about a full rank covariance estimate?
 
 
 
