@@ -353,26 +353,79 @@ Look in revisit folder,
 
 
 ## Exercises
-
-1.. Can we remove the bias parameter from the fully-connected layer or the convolutional layer
+### Exercises and mysilly answers
+1. Can we remove the bias parameter from the fully-connected layer or the convolutional layer
 before the batch normalization? Why?
+
+* Since batchnorm already includes bias, and also shift by mean any constant would be cancelled out therefore, it makes no sense to add bias.
+
 2. Compare the learning rates for LeNet with and without batch normalization.
 
-training lenet without batchnorm
-![](lenet_without_batchnorm.png)
+![](lenet_with_batchnorm.png)
 
 1. Plot the increase in training and test accuracy.
-2. How large can you make the learning rate?
-3. Do we need batch normalization in every layer? Experiment with it?
+    * with batchnorm the accuracy = 0.962 at lr 1.0
+    * without batchnorm the accuracy 0.931 at lr 0.1
 
-![](lenet_with_bn_on_every_layer.png)
+    ![](lenet_without_batchnorm.png)
+
+2. How large can you make the learning rate?
+    * tried with 1.0
+3. Do we need batch normalization in every layer? Experiment with it?
+    * okay. tried it is surprisingly giving accuracy of 94.6
+
+    ![](lenet_with_bn_on_every_layer.png)
 
 4. Can you replace dropout by batch normalization? How does the behavior change?
+
+    * from https://stackoverflow.com/questions/39691902/ordering-of-batch-normalization-and-dropout 
+       ```  
+         193
+
+    In the Ioffe and Szegedy 2015, the authors state that "we would like to ensure that for any parameter values, the network always produces activations with the desired distribution". So the Batch Normalization Layer is actually inserted right after a Conv Layer/Fully Connected Layer, but before feeding into ReLu (or any other kinds of) activation. See this video at around time 53 min for more details.
+
+    As far as dropout goes, I believe dropout is applied after activation layer. In the dropout paper figure 3b, the dropout factor/probability matrix r(l) for hidden layer l is applied to it on y(l), where y(l) is the result after applying activation function f.
+
+    So in summary, the order of using batch normalization and dropout is:
+
+    -> CONV/FC -> BatchNorm -> ReLu(or other activation) -> Dropout -> CONV/FC ->
+    ```
+    
 5. Fix the parameters beta and gamma, and observe and analyze the results.
+
+    * okay. If it means fixing moving averages then I did it.
+
+![](batchnorm_fixed.png)
+
 6. Review the online documentation for BatchNorm from the high-level APIs to see the other
 applications for batch normalization.
-7. Research ideas: think of other normalization transforms that you can apply? Can you apply
-the probability integral transform? How about a full rank covariance estimate?
+
+https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html
+
+https://arxiv.org/abs/1502.03167
+
+``Our method draws its strength from making normalization a part of the model architecture and performing the
+normalization for each training mini-batch. Batch Normalization allows us to use much higher learning rates and
+be less careful about initialization. It also acts as a regularizer, in some cases eliminating the need for Dropout.
+Applied to a state-of-the-art image classification model,
+Batch Normalization achieves the same accuracy with 14
+times fewer training steps, and beats the original model
+by a significant margin.```
+
+7. Research ideas: think of other normalization transforms that you can apply?
+
+Can you apply the probability integral transform? 
+
+- https://en.wikipedia.org/wiki/Probability_integral_transform
+
+in probability theory, the probability integral transform (also known as universality of the uniform) relates to the result that data values that are modeled as being random variables from any given continuous distribution can be converted to random variables having a standard uniform distribution.[1] This holds exactly provided that the distribution being used is the true distribution of the random variables; if the distribution is one fitted to the data, the result will hold approximately in large samples.
+
+
+How about a full rank covariance estimate?
+
+- dont know what this term is.
+
+
 
 
 
