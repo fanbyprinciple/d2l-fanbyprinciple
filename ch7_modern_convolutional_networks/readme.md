@@ -425,7 +425,20 @@ How about a full rank covariance estimate?
 
 - dont know what this term is.
 
+# The accuracy function I should use
 
+![](accuracy_function_i_should_use.png)
+
+
+# Resnet
+
+Deeper networks should mean better accuracy. But this is not always the case.
+
+Only if there is a nested function and the answer is within the scope of larger network, do we get the minima. 
+
+There are 4 convolutional layers in each module (excluding the 1×1 convolutional layer). Together
+with the first 7 × 7 convolutional layer and the final fully-connected layer, there are 18 layers in
+total. Therefore, this model is commonly known as ResNet-18.
 
 
 
