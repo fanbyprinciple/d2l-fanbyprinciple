@@ -440,6 +440,22 @@ There are 4 convolutional layers in each module (excluding the 1×1 convolutiona
 with the first 7 × 7 convolutional layer and the final fully-connected layer, there are 18 layers in
 total. Therefore, this model is commonly known as ResNet-18.
 
+![](resnet.png)
+
+1. What are the major differences between the Inception block in Fig. 7.4.1 and the residual
+block? After removing some paths in the Inception block, how are they related to each other?
+2. Refer to Table 1 in the ResNet paper (He et al., 2016a) to implement different variants.
+
+![](resnet34.png)
+
+3. For deeper networks, ResNet introduces a “bottleneck” architecture to reduce model complexity. Try to implement it.
+
+4. In subsequent versions of ResNet, the authors changed the “convolution, batch normalization, and activation” structure to the “batch normalization, activation, and convolution”
+
+structure. Make this improvement yourself. See Figure 1 in (He et al., 2016b) for details.
+5. Why canʼt we just increase the complexity of functions without bound, even if the function
+classes are nested
+
 
 
 
