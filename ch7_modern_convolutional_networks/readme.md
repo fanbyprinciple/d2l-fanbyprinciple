@@ -442,21 +442,70 @@ total. Therefore, this model is commonly known as ResNet-18.
 
 ![](resnet.png)
 
+### Exercises
+
 1. What are the major differences between the Inception block in Fig. 7.4.1 and the residual
 block? After removing some paths in the Inception block, how are they related to each other?
-2. Refer to Table 1 in the ResNet paper (He et al., 2016a) to implement different variants.
+    - Inception uses multiple paths while resnet uses one single path with X.
 
-![](resnet34.png)
+2. Refer to Table 1 in the ResNet paper (He et al., 2016a) to implement different variants.
+    - https://www.cv-foundation.org/openaccess/content_cvpr_2016/papers/He_Deep_Residual_Learning_CVPR_2016_paper.pdf
+    
+    -okay. Tried training resnet 34 ![](resnet34.png)
 
 3. For deeper networks, ResNet introduces a “bottleneck” architecture to reduce model complexity. Try to implement it.
 
-4. In subsequent versions of ResNet, the authors changed the “convolution, batch normalization, and activation” structure to the “batch normalization, activation, and convolution”
+    ## Bottleneck
+    To increase the network depth whilekeeping the parameter size as low as possible authors introduced bottlenecks
+    “The three layers are 1x1, 3x3, and 1x1 convolutions, where the 1×1 layers are responsible for reducing and then increasing (restoring) dimensions, leaving the 3×3 layer a bottleneck with smaller input/output dimensions.”
 
+    ```python
+    class ResidualBottleNeck(ResnetBasicBlock):
+        expansion=4
+        def __init__(self, in_channels, out_channels, *args, **kwargs):
+            super().__init__(in_channels, out_channels,expansion=4,*args, **kwargs)
+            self.blocks = nn.Sequential(
+                conv_bn(self.in_channels, self.out_channels,self.conv, kernel_size=1),
+                activation_function(self.activation),
+                conv_bn(self.out_channels, self.out_channels,self.conv, kernel_size=3, stride=self.downsampling),
+                activation_function(self.activation),
+                conv_bn(self.out_channels,self.expanded_channels, self.conv, kernel_size=1),
+                activation_function(self.activation)
+            )
+
+    ```
+
+4. In subsequent versions of ResNet, the authors changed the “convolution, batch normalization, and activation” structure to the “batch normalization, activation, and convolution”
 structure. Make this improvement yourself. See Figure 1 in (He et al., 2016b) for details.
+    - fish classification notebook for details. https://www.kaggle.com/fanbyprinciple/fish-classification-with-resnet/edit/run/75844548
+
 5. Why canʼt we just increase the complexity of functions without bound, even if the function
 classes are nested
 
+- vanishing gradients? training timeincrease does not match the accuracy tradeoff.
 
+# DenseNet
 
+Densenet -is an extension of resnet
+ difference is densenet uses conactenation while resnet uses addition
 
+ ```python
+ class Densenet(nn.Module):
+    def __init__(self, num_convs, input_channels, num_channels):
+        super(Densenet, self).__init__()
+        layers = []
+        for i in range(num_convs):
+            layers.append(conv_block(input_channels + num_channels* i, num_channels))
+        
+        self.net = nn.Sequential(*layers)
+    
+    def forward(self, X):
+        for layer in self.net:
+            y = layer(X)
+            X = torch.cat((X,y), dim=1)
+        return X
+ ```
 
+Since adding densblocks will increase the complexity we use a transition block to reduce the complexity
+
+![](densenet.png)
