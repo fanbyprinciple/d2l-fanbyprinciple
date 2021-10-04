@@ -509,3 +509,7 @@ Densenet -is an extension of resnet
 Since adding densblocks will increase the complexity we use a transition block to reduce the complexity
 
 ![](densenet.png)
+
+Calculating GPU utilisation 
+
+![](gpu_utilisation.png)
