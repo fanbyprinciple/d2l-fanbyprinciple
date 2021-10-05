@@ -513,3 +513,20 @@ Since adding densblocks will increase the complexity we use a transition block t
 Calculating GPU utilisation 
 
 ![](gpu_utilisation.png)
+
+Finally densenet trained
+
+![](densenet_trained.png)
+
+Things to keep in mind
+
+1. initialise with xavier initialisation
+2. get accuracy formula right, its (argmax(y_hat, dim=1)==y).sum().float().mean()
+3. devide the train loss by total len(y) when adding to array
+4. Make sure Loss is in the same range as of training accuracy
+
+Need to do the mlp with densenet idea.
+
+I didnt even get which model was ours:
+
+![](densenet_models.png)
