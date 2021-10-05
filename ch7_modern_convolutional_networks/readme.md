@@ -530,3 +530,11 @@ Need to do the mlp with densenet idea.
 I didnt even get which model was ours:
 
 ![](densenet_models.png)
+
+# trying to apply densenet on housing dataset
+
+https://www.kaggle.com/fanbyprinciple/housing-prices-using-dense-net-mlp/edit
+
+After normalisation:
+
+![](housing_normalisation.png)
