@@ -538,3 +538,7 @@ https://www.kaggle.com/fanbyprinciple/housing-prices-using-dense-net-mlp/edit
 After normalisation:
 
 ![](housing_normalisation.png)
+
+Nan in the network:
+
+![](housing_nan.png)
