@@ -533,8 +533,6 @@ I didnt even get which model was ours:
 
 # trying to apply densenet on housing dataset
 
-https://www.kaggle.com/fanbyprinciple/housing-prices-using-dense-net-mlp/edit
-
 After normalisation:
 
 ![](housing_normalisation.png)
@@ -542,3 +540,59 @@ After normalisation:
 Nan in the network:
 
 ![](housing_nan.png)
+
+Final prediction
+
+![](housing_data.png)
+
+## Exercises
+1. Why do we use average pooling rather than maximum pooling in the transition layer?
+- so that theother cells may not be eliminated and have some value addition in the model
+
+2. One of the advantages mentioned in the DenseNet paper is that its model parameters are
+smaller than those of ResNet. Why is this the case?
+Densenet -is an extension of resnet
+ difference is densenet uses conactenation while resnet uses addition
+
+- because of less number of linear layers, more memory is utilised instead disk space( I am ssuming because of the follow up question given below)
+
+```
+Total params: 758,226
+Trainable params: 758,226
+Non-trainable params: 0
+----------------------------------------------------------------
+Input size (MB): 0.04
+Forward/backward pass size (MB): 14.29
+Params size (MB): 2.89
+Estimated Total Size (MB): 17.22
+```
+
+This is the disk space, while the memory used in 3.1 GB.
+
+3. One problem for which DenseNet has been criticized is its high memory consumption.
+    1. Is this really the case? Try to change the input shape to 224 × 224 to see the actual GPU
+    memory consumption.
+    ```
+    Total params: 758,226
+    Trainable params: 758,226
+    Non-trainable params: 0
+    ----------------------------------------------------------------
+    Input size (MB): 0.19
+    Forward/backward pass size (MB): 77.81
+    Params size (MB): 2.89
+    Estimated Total Size (MB): 80.89
+    ```
+    
+    2. Can you think of an alternative means of reducing the memory consumption? How
+    would you need to change the framework?
+    - no Idea. Maybe focus on storing varibale rather than using it in the memory.
+    
+4. Implement the various DenseNet versions presented in Table 1 of the DenseNet paper
+(Huang et al., 2017).
+
+- here is the paper, https://arxiv.org/pdf/1608.06993.pdf. Not implemented by me.
+
+5. Design an MLP-based model by applying the DenseNet idea. Apply it to the housing price
+prediction task in Section 4.10.
+
+-  This is a task! it has been implemented before tho: https://arxiv.org/pdf/2108.00864.pdf
