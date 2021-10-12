@@ -20,3 +20,12 @@ There are other things to consider in sequential model
 5. Human interact in sequential nature, they trade blows on twitter sequentially.
 
 - we need statistical tool to deal with all these data.
+
+Autoregressive models - models that perform regression on themselves. That is we consider them for a small time window Tau. If Tau is one we have a Markov model.
+Latent Autoregressive Models - It keeps a summary ht of past observations, and at the same time update ht in addition to prediction xt
+
+We predict this on the assumption that dynamics of the sequence wont change. This is called stationary.
+
+Causality means that reverse would also be true.Going back and predicting in reverse through model would also work.
+
+
