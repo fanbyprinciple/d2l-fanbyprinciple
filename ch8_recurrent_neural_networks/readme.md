@@ -28,4 +28,4 @@ We predict this on the assumption that dynamics of the sequence wont change. Thi
 
 Causality means that reverse would also be true.Going back and predicting in reverse through model would also work.
 
-
+![](simple_seq.png)
