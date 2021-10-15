@@ -29,3 +29,20 @@ We predict this on the assumption that dynamics of the sequence wont change. Thi
 Causality means that reverse would also be true.Going back and predicting in reverse through model would also work.
 
 ![](simple_seq.png)
+
+### skip ahead prediction:
+
+Generally, for an observed sequence up to xt
+, its predicted output xˆt+k at time step t + k is called
+the k-step-ahead prediction. Since we have observed up to x604, its k-step-ahead prediction is xˆ604+k.
+However multistep prediction ait so simple:
+
+![](bad_multistep_prediction.png)
+
+s the above example shows, this is a spectacular failure. The predictions decay to a constant
+pretty quickly after a few prediction steps. Why did the algorithm work so poorly? This is ultimately due to the fact that the errors build up. Let us say that after step 1 we have some error
+ϵ1 = ¯ϵ. Now the input for step 2 is perturbed by ϵ1, hence we suffer some error in the order of
+ϵ2 = ¯ϵ + cϵ1 for some constant c, and so on. The error can diverge rather rapidly from the true
+observations. This is a common phenomenon. For instance, weather forecasts for the next 24
+hours tend to be pretty accurate but beyond that the accuracy declines rapidly. We will discuss
+methods for improving this throughout this chapter and beyond
