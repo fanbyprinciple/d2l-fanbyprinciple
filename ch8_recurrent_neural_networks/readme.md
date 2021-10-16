@@ -46,3 +46,12 @@ pretty quickly after a few prediction steps. Why did the algorithm work so poorl
 observations. This is a common phenomenon. For instance, weather forecasts for the next 24
 hours tend to be pretty accurate but beyond that the accuracy declines rapidly. We will discuss
 methods for improving this throughout this chapter and beyond
+
+### Good multistep prediction
+
+![](good_multistep.png)
+
+also trying to develop autoregressive model at kaggle.com
+https://www.kaggle.com/fanbyprinciple/sequence-prediction-with-autoregressive-model/edit
+
+
