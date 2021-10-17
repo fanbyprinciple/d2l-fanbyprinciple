@@ -46,3 +46,32 @@ pretty quickly after a few prediction steps. Why did the algorithm work so poorl
 observations. This is a common phenomenon. For instance, weather forecasts for the next 24
 hours tend to be pretty accurate but beyond that the accuracy declines rapidly. We will discuss
 methods for improving this throughout this chapter and beyond
+
+### Exercises
+
+### Things to ponder
+
+Improve the model in the experiment of this section.
+
+    -Incorporate more than the past 4 observations? How many do you really need?
+    (Tried. in a limited way. close to one seems better.)
+    ![](slug.png)
+
+    - How many past observations would you need if there was no noise? Hint: you can write  sin  and  cos  as a differential equation.
+    (I tried with sin and cos.Its the same story. `x = torch.cos(time * 0.01)`)
+    ![](no_noise.png)
+
+    - Can you incorporate older observations while keeping the total number of features constant? Does this improve accuracy? Why?
+    (Dont get the question)
+
+    Change the neural network architecture and evaluate the performance.
+    (tried. same)
+
+An investor wants to find a good security to buy. He looks at past returns to decide which one is likely to do well. What could possibly go wrong with this strategy?
+(Only things constant in life is change)
+
+Does causality also apply to text? To which extent?
+(The words do have some causality I believe, you can expect h to follow W at the start of a sentence with a relatively high degree of confidence. But its very topical)
+
+Give an example for when a latent autoregressive model might be needed to capture the dynamic of the data.
+(In stock market!)
