@@ -54,4 +54,14 @@ methods for improving this throughout this chapter and beyond
 also trying to develop autoregressive model at kaggle.com
 https://www.kaggle.com/fanbyprinciple/sequence-prediction-with-autoregressive-model/edit
 
+# Text preprocessing
+
+1. Load text as strings into memory.
+2. Split strings into tokens (e.g., words and characters).
+3. Build a table of vocabulary to map the split tokens to numerical indices.
+4. Convert text into sequences of numerical indices so they can be manipulated by models
+easily.
+
+
+
 
