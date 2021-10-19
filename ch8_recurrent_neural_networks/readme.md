@@ -53,18 +53,6 @@ methods for improving this throughout this chapter and beyond
 
 also trying to develop autoregressive model at kaggle.com
 https://www.kaggle.com/fanbyprinciple/sequence-prediction-with-autoregressive-model/edit
-
-# Text preprocessing
-
-1. Load text as strings into memory.
-2. Split strings into tokens (e.g., words and characters).
-3. Build a table of vocabulary to map the split tokens to numerical indices.
-4. Convert text into sequences of numerical indices so they can be manipulated by models
-easily.
-
-
-
-
 ### Exercises
 
 ### Things to ponder
@@ -93,3 +81,25 @@ Does causality also apply to text? To which extent?
 
 Give an example for when a latent autoregressive model might be needed to capture the dynamic of the data.
 (In stock market!)
+# Text preprocessing
+
+1. Load text as strings into memory.
+2. Split strings into tokens (e.g., words and characters).
+3. Build a table of vocabulary to map the split tokens to numerical indices.
+4. Convert text into sequences of numerical indices so they can be manipulated by models
+easily.
+
+### Exercises
+
+1. Tokenization is a key preprocessing step. It varies for different languages. Try to find another
+    three commonly used methods to tokenize text.
+    TreeBankWordTokenizer: It separates the word using spaces and punctuation.
+    PunktWordTokenizer: It does not separate punctuation from the word
+    WordPunktTokenizer: It separate punctuation from the word
+
+2. In the experiment of this section, tokenize text into words and vary the min_freq arguments
+of the Vocab instance. How does this affect the vocabulary size?
+
+    as min_freq increases vocabulary size decreases apparently.
+
+can we try and implement this: https://www.kaggle.com/smokingkrils/preprocessing-visualizations-and-accuracy#
