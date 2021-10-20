@@ -103,3 +103,7 @@ of the Vocab instance. How does this affect the vocabulary size?
     as min_freq increases vocabulary size decreases apparently.
 
 can we try and implement this: https://www.kaggle.com/smokingkrils/preprocessing-visualizations-and-accuracy#
+
+### Trying data precoccesing with shakespeare
+
+![](wordcloud.png)
