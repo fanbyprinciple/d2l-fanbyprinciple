@@ -107,3 +107,6 @@ can we try and implement this: https://www.kaggle.com/smokingkrils/preprocessing
 ### Trying data precoccesing with shakespeare
 
 ![](wordcloud.png)
+
+Error galore!
+![](errors_ol.png)
