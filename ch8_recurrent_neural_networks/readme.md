@@ -109,4 +109,7 @@ can we try and implement this: https://www.kaggle.com/smokingkrils/preprocessing
 ![](wordcloud.png)
 
 Error galore!
-![](errors_ol.png)
+![](error_shakes.png)
+
+Errors rectified:
+![](shakes.png)
