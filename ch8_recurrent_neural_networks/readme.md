@@ -113,3 +113,19 @@ Error galore!
 
 Errors rectified:
 ![](shakes.png)
+
+## Language models and the Dataset
+
+We can map text into tokens. Languagemodels are very useful. as they can create grammatically correct password.
+
+if we go by probability of a sentence containing deep learning given it already has deep then P(deep, learning)/ P(deep)
+
+however it can be very difficult to get any probability for some words so what we do is we create something called laplace smoothing.
+
+We add a constant to the probability.
+
+However a model based on counts is not enough because 1. we need to store all counts
+2. model doesnot capture the meaning between the words
+
+### Markov modeling for language
+
