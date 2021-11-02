@@ -129,3 +129,10 @@ However a model based on counts is not enough because 1. we need to store all co
 
 ### Markov modeling for language
 
+would lead to something
+
+### modelling
+
+Trying to recreate previous function tokenize and class Vocab.
+![](creating_counter.png)
+
