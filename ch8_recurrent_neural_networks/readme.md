@@ -129,10 +129,43 @@ However a model based on counts is not enough because 1. we need to store all co
 
 ### Markov modeling for language
 
-would lead to something
+. A distribution over sequences satisfies the Markov property of first order if 
+P(x+1 |xt, . . . , x1) = P(xt+1 | xt). 
 
-### modelling
+Higher orders correspond to longer dependencies. This leads to a
+number of approximations that we could apply to model a sequence:
+P(x1, x2, x3, x4) = P(x1)P(x2)P(x3)P(x4),
+P(x1, x2, x3, x4) = P(x1)P(x2 | x1)P(x3 | x2)P(x4 | x3),
+P(x1, x2, x3, x4) = P(x1)P(x2 | x1)P(x3 | x1, x2)P(x4 | x2, x3)
+
+### Natural Language Statistics
 
 Trying to recreate previous function tokenize and class Vocab.
 ![](creating_counter.png)
 
+decay of frequency is actually linear in log (exponential decrease)
+![](freq_decay.png)
+
+We are on to something quite fundamental here: the word frequency decays rapidly in a welldefined way. After dealing with the first few words as exceptions, all the remaining words roughly
+follow a straight line on a log-log plot. This means that words satisfy Zipf’s law, which states that
+the frequency ni of the ith most frequent word is:
+ni ∝ 1/i^a
+
+which is equivalent to
+log ni = −α log i + c
+
+where α is the exponent that characterizes the distribution and c is a constant. 
+
+This should already
+give us pause if we want to model words by counting statistics and smoothing. After all, we will
+significantly overestimate the frequency of the tail, also known as the infrequent words. But what
+about the other word combinations, such as bigrams, trigrams, and beyond?
+
+![](trigram_plot.png)
+
+This figure is quite exciting for a number of reasons. First, beyond unigram words, sequences of
+words also appear to be following Zipfʼs law, albeit with a smaller exponent α in (8.3.7), depending
+on the sequence length. Second, the number of distinct n-grams is not that large. This gives us
+hope that there is quite a lot of structure in language. Third, many n-grams occur very rarely,
+which makes Laplace smoothing rather unsuitable for language modeling. Instead, we will use
+deep learning based models
