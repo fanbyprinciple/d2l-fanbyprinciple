@@ -169,3 +169,17 @@ on the sequence length. Second, the number of distinct n-grams is not that large
 hope that there is quite a lot of structure in language. Third, many n-grams occur very rarely,
 which makes Laplace smoothing rather unsuitable for language modeling. Instead, we will use
 deep learning based models
+
+Spiffs law - the number of words that occur in a text is always exponential
+
+### Reading long sequence of sentences
+
+To begin with, since a text sequence can be arbitrarily long, such as the entire The Time Machine
+book, we can partition such a long sequence into subsequences with the same number of time
+steps. When training our neural network, a minibatch of such subsequences will be fed into the
+model
+
+So we can do both 
+1. Random sampling
+2. Sequence partitioning
+
