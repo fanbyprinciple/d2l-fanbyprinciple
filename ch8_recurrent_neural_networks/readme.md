@@ -183,3 +183,4 @@ So we can do both
 1. Random sampling
 2. Sequence partitioning
 
+![](random_sampling.png)
