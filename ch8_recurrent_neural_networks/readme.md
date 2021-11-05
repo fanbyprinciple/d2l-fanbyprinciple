@@ -184,3 +184,33 @@ So we can do both
 2. Sequence partitioning
 
 ![](random_sampling.png)
+
+### Exercises
+
+1. Suppose there are 100, 000 words in the training dataset. How much word frequency and
+multi-word adjacent frequency does a four-gram need to store?
+    Dont get the question
+    
+2. How would you model a dialogue?
+    Dont have an idea what it is prodding us to do.
+    
+3. Estimate the exponent of Zipfʼs law for unigrams, bigrams, and trigrams.
+    okay.two decaying functions. Not able to make unigram.
+    ![](exp_bigrams.png)
+    was this what we had to do?
+
+4. What other methods can you think of for reading long sequence data?
+    maybe storing them in a dict,for oft repeated words memory can be saved
+
+5. Consider the random offset that we use for reading long sequences.
+    1. Why is it a good idea to have a random offset?
+        for the randomness
+    2. Does it really lead to a perfectly uniform distribution over the sequences on the document?
+        I dont know how to check
+    3. What would you have to do to make things even more uniform?
+        Would maybe take words based on some distribution.
+        
+6. If we want a sequence example to be a complete sentence, what kind of problem does this
+introduce in minibatch sampling? How can we fix the problem?
+    All the sentences have different number of words so we wont be able to get a minibatch tha tis uniform.
+    we can pad data.
