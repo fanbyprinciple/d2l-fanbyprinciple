@@ -247,3 +247,35 @@ and O = Phi(HW + B) is the output layer
 Ht = phi(Xt * W + Ht-1 * W +B)
 Output = HW + B
 
+### RNN based character modelling
+
+We well be aiming for a model for whom one letter shifted would act as labels
+as in machin ( input) -> achine (label)
+
+Perplexity ranges from 1 to positive infinity
+
+Perplexity can be best understood as the harmonic mean of the number of real choices that we
+have when deciding which token to pick next. Let us look at a number of cases:
+• In the best case scenario, the model always perfectly estimates the probability of the label
+token as 1. In this case the perplexity of the model is 1.
+• In the worst case scenario, the model always predicts the probability of the label token as 0.
+In this situation, the perplexity is positive infinity.
+• At the baseline, the model predicts a uniform distribution over all the available tokens of the
+vocabulary. In this case, the perplexity equals the number of unique tokens of the vocabulary. In fact, if we were to store the sequence without any compression, this would be the
+best we could do to encode it. Hence, this provides a nontrivial upper bound that any useful
+model must beat.
+
+### Exercises
+
+1. If we use an RNN to predict the next character in a text sequence, what is the required dimension for any output?
+  dimension equal to text sequence.
+    
+2. Why can RNNs express the conditional probability of a token at some time step based on all
+the previous tokens in the text sequence?
+    I wonder why. I dont think I ve understood language probability too well.
+    
+3. What happens to the gradient if you backpropagate through a long sequence?
+    Reaches 0
+
+4. What are some of the problems associated with the language model described in this section?
+    We cant find the correlation between the words
