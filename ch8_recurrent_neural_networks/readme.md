@@ -205,7 +205,7 @@ multi-word adjacent frequency does a four-gram need to store?
 5. Consider the random offset that we use for reading long sequences.
     1. Why is it a good idea to have a random offset?
         for the randomness
-    2. Does it really lead to a perfectly uniform distribution over the sequences on the document?
+    2. Does it really lead to a perfectly uniform distribution over the sequences on the document?
         I dont know how to check
     3. What would you have to do to make things even more uniform?
         Would maybe take words based on some distribution.
@@ -214,3 +214,36 @@ multi-word adjacent frequency does a four-gram need to store?
 introduce in minibatch sampling? How can we fix the problem?
     All the sentences have different number of words so we wont be able to get a minibatch tha tis uniform.
     we can pad data.
+
+## Recurrent neural network
+
+1.  
+
+we introduced n-gram models, where the conditional probability of word xt at time
+step t only depends on the n − 1 previous words.
+
+If we want to incorporate the possible effect of
+words earlier than time step t − (n − 1) on xt, we need to increase n. 
+
+However, the number of
+model parameters would also increase exponentially with it, as we need to store |V|n numbers for
+a vocabulary set V. 
+
+Hence, rather than modeling P(xt
+| xt−1, . . . , xt−n+1) it is preferable to use a
+latent variable model
+
+p(xt | xt−1, . . . , xt−n+1) = p(xt |ht-1)
+
+where ht is the hidden state of the RNN.
+
+CUrrent hidden state ht can be calculated as a function of f(xt | ht-1)
+
+2.  When we donthave hidden state then H =  Phi(XW + B) where H is the intermediate layer
+and O = Phi(HW + B) is the output layer
+
+3. When we do have hidden states then,
+
+Ht = phi(Xt * W + Ht-1 * W +B)
+Output = HW + B
+
