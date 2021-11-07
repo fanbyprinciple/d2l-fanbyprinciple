@@ -279,3 +279,8 @@ the previous tokens in the text sequence?
 
 4. What are some of the problems associated with the language model described in this section?
     We cant find the correlation between the words
+
+## Creating RNN from scratch
+
+Trying to understand tokenisation mechanism
+![](tokenisation_error.png)
