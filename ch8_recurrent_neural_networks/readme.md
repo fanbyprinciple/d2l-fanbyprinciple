@@ -30,7 +30,7 @@ Causality means that reverse would also be true.Going back and predicting in rev
 
 ![](simple_seq.png)
 
-### skip ahead prediction:
+### skip ahead prediction
 
 Generally, for an observed sequence up to xt
 , its predicted output xˆt+k at time step t + k is called
@@ -52,7 +52,8 @@ methods for improving this throughout this chapter and beyond
 ![](good_multistep.png)
 
 also trying to develop autoregressive model at kaggle.com
-https://www.kaggle.com/fanbyprinciple/sequence-prediction-with-autoregressive-model/edit
+<https://www.kaggle.com/fanbyprinciple/sequence-prediction-with-autoregressive-model/edit>
+
 ### Exercises
 
 ### Things to ponder
@@ -81,6 +82,7 @@ Does causality also apply to text? To which extent?
 
 Give an example for when a latent autoregressive model might be needed to capture the dynamic of the data.
 (In stock market!)
+
 # Text preprocessing
 
 1. Load text as strings into memory.
@@ -102,7 +104,7 @@ of the Vocab instance. How does this affect the vocabulary size?
 
     as min_freq increases vocabulary size decreases apparently.
 
-can we try and implement this: https://www.kaggle.com/smokingkrils/preprocessing-visualizations-and-accuracy#
+can we try and implement this: <https://www.kaggle.com/smokingkrils/preprocessing-visualizations-and-accuracy>#
 
 ### Trying data precoccesing with shakespeare
 
@@ -129,8 +131,8 @@ However a model based on counts is not enough because 1. we need to store all co
 
 ### Markov modeling for language
 
-. A distribution over sequences satisfies the Markov property of first order if 
-P(x+1 |xt, . . . , x1) = P(xt+1 | xt). 
+. A distribution over sequences satisfies the Markov property of first order if
+P(x+1 |xt, . . . , x1) = P(xt+1 | xt).
 
 Higher orders correspond to longer dependencies. This leads to a
 number of approximations that we could apply to model a sequence:
@@ -154,7 +156,7 @@ ni ∝ 1/i^a
 which is equivalent to
 log ni = −α log i + c
 
-where α is the exponent that characterizes the distribution and c is a constant. 
+where α is the exponent that characterizes the distribution and c is a constant.
 
 This should already
 give us pause if we want to model words by counting statistics and smoothing. After all, we will
@@ -179,7 +181,8 @@ book, we can partition such a long sequence into subsequences with the same numb
 steps. When training our neural network, a minibatch of such subsequences will be fed into the
 model
 
-So we can do both 
+So we can do both
+
 1. Random sampling
 2. Sequence partitioning
 
@@ -190,10 +193,10 @@ So we can do both
 1. Suppose there are 100, 000 words in the training dataset. How much word frequency and
 multi-word adjacent frequency does a four-gram need to store?
     Dont get the question
-    
+
 2. How would you model a dialogue?
     Dont have an idea what it is prodding us to do.
-    
+
 3. Estimate the exponent of Zipfʼs law for unigrams, bigrams, and trigrams.
     okay.two decaying functions. Not able to make unigram.
     ![](exp_bigrams.png)
@@ -209,7 +212,7 @@ multi-word adjacent frequency does a four-gram need to store?
         I dont know how to check
     3. What would you have to do to make things even more uniform?
         Would maybe take words based on some distribution.
-        
+
 6. If we want a sequence example to be a complete sentence, what kind of problem does this
 introduce in minibatch sampling? How can we fix the problem?
     All the sentences have different number of words so we wont be able to get a minibatch tha tis uniform.
@@ -223,11 +226,11 @@ we introduced n-gram models, where the conditional probability of word xt at tim
 step t only depends on the n − 1 previous words.
 
 If we want to incorporate the possible effect of
-words earlier than time step t − (n − 1) on xt, we need to increase n. 
+words earlier than time step t − (n − 1) on xt, we need to increase n.
 
 However, the number of
 model parameters would also increase exponentially with it, as we need to store |V|n numbers for
-a vocabulary set V. 
+a vocabulary set V.
 
 Hence, rather than modeling P(xt
 | xt−1, . . . , xt−n+1) it is preferable to use a
@@ -239,12 +242,12 @@ where ht is the hidden state of the RNN.
 
 CUrrent hidden state ht can be calculated as a function of f(xt | ht-1)
 
-2.  When we donthave hidden state then H =  Phi(XW + B) where H is the intermediate layer
+2. When we donthave hidden state then H =  Phi(XW + B) where H is the intermediate layer
 and O = Phi(HW + B) is the output layer
 
 3. When we do have hidden states then,
 
-Ht = phi(Xt * W + Ht-1 * W +B)
+Ht = phi(Xt *W + Ht-1* W +B)
 Output = HW + B
 
 ### RNN based character modelling
@@ -269,11 +272,11 @@ model must beat.
 
 1. If we use an RNN to predict the next character in a text sequence, what is the required dimension for any output?
   dimension equal to text sequence.
-    
+  
 2. Why can RNNs express the conditional probability of a token at some time step based on all
 the previous tokens in the text sequence?
     I wonder why. I dont think I ve understood language probability too well.
-    
+
 3. What happens to the gradient if you backpropagate through a long sequence?
     Reaches 0
 
@@ -284,3 +287,4 @@ the previous tokens in the text sequence?
 
 Trying to understand tokenisation mechanism
 ![](tokenisation_error.png)
+
