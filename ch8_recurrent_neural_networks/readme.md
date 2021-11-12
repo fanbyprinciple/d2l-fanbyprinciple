@@ -288,3 +288,7 @@ the previous tokens in the text sequence?
 Trying to understand tokenisation mechanism
 ![](tokenisation_error.png)
 
+### RNN Model
+
+![](rnn_untrained.png)
+
