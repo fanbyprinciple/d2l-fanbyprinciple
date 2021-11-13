@@ -250,6 +250,15 @@ and O = Phi(HW + B) is the output layer
 Ht = phi(Xt *W + Ht-1* W +B)
 Output = HW + B
 
+## My take on RNN
+
+What happens in rnn is that for every time we calculate the output we use the previous hidden state and its weights  and this time step hidden weight to calculate the new output which acts as the new hidden state.
+
+X would be a n * d matrix where n is the number of time steps and d is the number of features.
+
+output = X(t) * Wxh + H(t-1) * Whh + b
+where size of x is equivalent to len(vocab)
+h is the hidden size and b is equal to output size
 ### RNN based character modelling
 
 We well be aiming for a model for whom one letter shifted would act as labels
