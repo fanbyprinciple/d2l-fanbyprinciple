@@ -301,3 +301,4 @@ Trying to understand tokenisation mechanism
 
 ![](rnn_untrained.png)
 
+RNN untrained spawns the same sentence everytime.
