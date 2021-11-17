@@ -302,3 +302,10 @@ Trying to understand tokenisation mechanism
 ![](rnn_untrained.png)
 
 RNN untrained spawns the same sentence everytime.
+
+### Gradient clipping
+
+we do it so that we can deal with large gradients
+
+such that g(t) is bounded by a small value., g(t) = min(g(t), clip_value)
+
