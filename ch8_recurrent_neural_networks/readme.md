@@ -313,3 +313,5 @@ book model RNN trained:
 ![](book_model_rnn.png)
 
 ## Practice
+
+![](preactice/random_iter.png)
