@@ -311,3 +311,5 @@ such that g(t) is bounded by a small value., g(t) = min(g(t), clip_value)
 
 book model RNN trained:
 ![](book_model_rnn.png)
+
+## Practice
