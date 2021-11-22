@@ -314,4 +314,5 @@ book model RNN trained:
 
 ## Practice
 
-![](preactice/random_iter.png)
+since, 
+![](practice/random_iter.png)
