@@ -317,5 +317,7 @@ book model RNN trained:
 ![](practice/random_iter.png)
 
 2.
-creatinga  concise rnn
-problems with dimensions
+creating a concise rnn
+problems with dimensions:  resolved it was an one hot encoding error.
+
+![](practice/rnn_with_pytorch.png)
