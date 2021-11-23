@@ -313,6 +313,9 @@ book model RNN trained:
 ![](book_model_rnn.png)
 
 ## Practice
-
-since, 
+1.
 ![](practice/random_iter.png)
+
+2.
+creatinga  concise rnn
+problems with dimensions
