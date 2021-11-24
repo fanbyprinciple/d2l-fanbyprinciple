@@ -321,3 +321,8 @@ creating a concise rnn
 problems with dimensions:  resolved it was an one hot encoding error.
 
 ![](practice/rnn_with_pytorch.png)
+
+3.
+Numbers based RNN
+helpful : https://towardsdatascience.com/pytorch-basics-how-to-train-your-neural-net-intro-to-rnn-cb6ebc594677
+
