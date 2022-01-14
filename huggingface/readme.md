@@ -29,3 +29,10 @@ check successful installation with
 
 `python -c "from transformers import pipeline; print(pipeline('sentiment-analysis')('I love you'))"`
 
+
+## Introduction
+
+from page - https://huggingface.co/course/chapter1/3?fw=pt
+
+
+
