@@ -34,5 +34,13 @@ check successful installation with
 
 from page - https://huggingface.co/course/chapter1/3?fw=pt
 
+![](bias_in_transformers.png)
+
+
+## transformers in action
+
+from page - https://huggingface.co/course/chapter2/1?fw=pt
+
+
 
 
