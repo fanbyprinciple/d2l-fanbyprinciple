@@ -41,6 +41,12 @@ from page - https://huggingface.co/course/chapter1/3?fw=pt
 
 from page - https://huggingface.co/course/chapter2/1?fw=pt
 
+![](using_tokenizer.png)
+
+## Fine tuning a pretrained model
+
+https://huggingface.co/course/chapter3/1?fw=pt
+
 
 
 
