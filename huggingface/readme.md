@@ -47,6 +47,8 @@ from page - https://huggingface.co/course/chapter2/1?fw=pt
 
 https://huggingface.co/course/chapter3/1?fw=pt
 
+![](training_modes.png)
+
 
 
 
