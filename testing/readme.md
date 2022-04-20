@@ -18,3 +18,10 @@ HQ resolution gan - uses multiple gpu not efficiently - need to understand code
 
 progresssive gan is gpu intensice - can it be used better with logging.
 
+# THings to learn
+
+how to use checkpoint parameter
+Dataparrallelism efficiently
+Multithreading - by default?
+
+
