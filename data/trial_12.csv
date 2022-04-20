@@ -1,2 +1,0 @@
-run_id,condition,success,timeout,failed_images,failed_audio,failed_video,trial_type,trial_index,time_elapsed,internal_node_id,subject,condition,recorded_at,ip,user_agent,device,browser,browser_version,platform,platform_version
-12,1,true,false,[],[],[],preload,0,2400,0.0-0.0,cf7760ftt62xr0m,Self,"2021-03-24 08:03:48",171.76.192.201,"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.90 Safari/537.36",WebKit,Chrome,89.0.4389.90,Windows,10.0
